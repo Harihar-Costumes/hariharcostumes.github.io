@@ -29,23 +29,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:var(--nd);paddin
 .burger{display:none;flex-direction:column;gap:5px;cursor:pointer;flex-shrink:0}
 .burger span{display:block;width:24px;height:1.5px;background:#fff}
 
-/* BACK BAR */
-.back-bar{background:var(--nv);padding:.65rem 1.5rem;margin-top:58px;border-bottom:1px solid rgba(201,150,58,.1);position:sticky;top:58px;z-index:99}
-.back-bar-inner{max-width:1140px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
-.back-nav{display:flex;align-items:center;gap:.5rem}
-.back-btn{display:inline-flex;align-items:center;gap:.4rem;color:rgba(255,255,255,.6);text-decoration:none;font-size:.68rem;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;transition:color .3s;padding:.3rem .6rem;border:1px solid rgba(255,255,255,.12);border-radius:4px}
-.back-btn:hover{color:var(--gd);border-color:rgba(201,150,58,.4)}
-.back-btn svg{width:13px;height:13px;flex-shrink:0}
-.back-sep{color:rgba(255,255,255,.2);font-size:.8rem;padding:0 .3rem}
-.back-current{font-size:.68rem;color:rgba(255,255,255,.38);letter-spacing:1px;text-transform:uppercase;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:200px}
-
-/* DRIVE LINK IN BACK BAR */
-.drive-link-sm{display:inline-flex;align-items:center;gap:.4rem;background:rgba(201,150,58,.1);border:1px solid rgba(201,150,58,.3);color:var(--gd);text-decoration:none;font-size:.62rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding:.32rem .8rem;border-radius:4px;transition:all .3s;white-space:nowrap;flex-shrink:0}
-.drive-link-sm:hover{background:var(--gd);color:var(--nd)}
-.drive-link-sm svg{width:12px;height:12px}
-
 /* PAGE HERO */
-.ph{background:var(--nd);padding:3.5rem 1.5rem 2.5rem;text-align:center;position:relative;overflow:hidden;border-bottom:1px solid rgba(201,150,58,.14)}
+.ph{background:var(--nd);padding:6rem 1.5rem 2.5rem;text-align:center;position:relative;overflow:hidden;border-bottom:1px solid rgba(201,150,58,.14)}
 .ph::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:400px;height:400px;background:radial-gradient(ellipse,rgba(12,84,153,.2) 0%,transparent 70%);pointer-events:none}
 .ph-inner{position:relative;z-index:2}
 .cat-emoji-big{font-size:2.8rem;display:block;margin-bottom:.6rem}
@@ -59,37 +44,103 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:var(--nd);paddin
 .ph-meta-label{font-size:.54rem;color:rgba(255,255,255,.3);letter-spacing:2px;text-transform:uppercase;margin-top:.2rem}
 .ph-meta-div{width:1px;height:26px;background:rgba(255,255,255,.1)}
 
-/* FILTER BAR */
-.filter-bar{background:var(--nm);padding:.75rem 1.5rem;position:sticky;top:calc(58px + 38px);z-index:98;border-bottom:1px solid rgba(201,150,58,.08)}
-.filter-inner{max-width:1140px;margin:0 auto;display:flex;align-items:center;gap:.8rem}
-.search-box{flex:1;min-width:0;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);color:#fff;padding:.42rem .9rem;font-family:'Inter',sans-serif;font-size:.78rem;border-radius:4px;outline:none;transition:border .3s}
-.search-box::placeholder{color:rgba(255,255,255,.28)}
-.search-box:focus{border-color:var(--gd)}
-.count-badge{font-size:.6rem;color:rgba(255,255,255,.35);letter-spacing:1.5px;text-transform:uppercase;white-space:nowrap;flex-shrink:0}
+/* FILTER + NAV BAR — combined sticky bar */
+.filter-bar{background:var(--nm);padding:.75rem 1.5rem;position:sticky;top:58px;z-index:100;border-bottom:1px solid rgba(201,150,58,.08)}
+.filter-inner{max-width:1140px;margin:0 auto;display:flex;flex-direction:column;gap:.65rem}
 
-/* COSTUME GRID */
+/* Row 1: search + count */
+.filter-row1{display:flex;align-items:center;gap:.8rem}
+.search-box{flex:1;min-width:0;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);color:#fff;padding:.48rem .9rem;font-family:'Inter',sans-serif;font-size:.78rem;border-radius:4px;outline:none;transition:border .3s}
+.search-box::placeholder{color:rgba(255,255,255,.3)}
+.search-box:focus{border-color:var(--gd)}
+.count-badge{font-size:.6rem;color:rgba(255,255,255,.38);letter-spacing:1.5px;text-transform:uppercase;white-space:nowrap;flex-shrink:0}
+
+/* Row 2: category prev/next nav + drive link */
+.filter-row2{display:flex;align-items:center;justify-content:space-between;gap:.8rem;flex-wrap:wrap}
+.cat-nav{display:flex;align-items:center;gap:.5rem}
+.nav-arrow{display:inline-flex;align-items:center;gap:.4rem;color:rgba(255,255,255,.55);text-decoration:none;font-size:.65rem;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;padding:.3rem .7rem;border:1px solid rgba(255,255,255,.14);border-radius:4px;transition:all .3s;white-space:nowrap;flex-shrink:0}
+.nav-arrow:hover{color:var(--gd);border-color:rgba(201,150,58,.45);background:rgba(201,150,58,.07)}
+.nav-arrow svg{width:13px;height:13px;flex-shrink:0}
+.nav-sep{color:rgba(255,255,255,.18);font-size:.8rem;padding:0 .2rem}
+.nav-current{font-size:.65rem;color:rgba(255,255,255,.35);letter-spacing:1px;text-transform:uppercase;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:160px}
+.drive-link-sm{display:inline-flex;align-items:center;gap:.4rem;background:rgba(201,150,58,.1);border:1px solid rgba(201,150,58,.3);color:var(--gd);text-decoration:none;font-size:.62rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding:.3rem .8rem;border-radius:4px;transition:all .3s;white-space:nowrap;flex-shrink:0}
+.drive-link-sm:hover{background:var(--gd);color:var(--nd)}
+.drive-link-sm svg{width:12px;height:12px}
+
+/* GRID SECTION */
 .grid-section{padding:2rem 1.5rem 5rem;background:var(--b1)}
 .container{max-width:1140px;margin:0 auto}
-.costume-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
-.costume-card{background:var(--b2);border:1px solid var(--b3);border-radius:12px;overflow:hidden;transition:transform .3s,box-shadow .3s,border-color .3s;display:flex;flex-direction:column}
-.costume-card:hover{transform:translateY(-5px);box-shadow:0 16px 40px rgba(4,44,83,.15);border-color:rgba(201,150,58,.4)}
-.costume-img{aspect-ratio:3/4;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;flex-shrink:0}
-/* Each img has actual <img> tag — emoji shown as fallback */
-.costume-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s}
-.costume-card:hover .costume-img img{transform:scale(1.06)}
-.costume-img-emoji{font-size:3rem;position:absolute;transition:transform .4s}
-.costume-card:hover .costume-img-emoji{transform:scale(1.12)}
-.costume-img-ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.65) 0%,transparent 50%);opacity:0;transition:opacity .3s;z-index:1}
+
+/* COSTUME GRID — overflow visible so hover zoom doesn't clip */
+.costume-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:1rem;
+  /* padding gives space for the zoom overflow */
+  padding:.5rem;
+  margin:-.5rem;
+}
+
+/* CARD */
+.costume-card{
+  background:var(--b2);
+  border:1px solid var(--b3);
+  border-radius:12px;
+  overflow:visible; /* allow img zoom to overflow */
+  transition:border-color .35s,box-shadow .35s,transform .35s;
+  display:flex;flex-direction:column;
+  position:relative;
+  z-index:1;
+}
+.costume-card:hover{
+  border-color:rgba(201,150,58,.5);
+  box-shadow:0 20px 60px rgba(4,44,83,.2);
+  z-index:20;
+}
+
+/* IMAGE WRAPPER — clips the radius, but card itself is overflow:visible */
+.costume-img-wrap{
+  border-radius:12px 12px 0 0;
+  overflow:hidden;
+  aspect-ratio:3/4;
+  position:relative;
+  flex-shrink:0;
+}
+
+.costume-img{
+  width:100%;height:100%;
+  display:flex;align-items:center;justify-content:center;
+  position:relative;
+  transition:transform .45s cubic-bezier(.23,1,.32,1);
+}
+
+/* BIG ZOOM on hover — scale the image wrap itself */
+.costume-card:hover .costume-img-wrap{
+  transform:scale(1.22);
+  border-radius:12px;
+  box-shadow:0 24px 60px rgba(1,13,24,.55);
+  z-index:30;
+  position:relative;
+}
+.costume-img-wrap{
+  transition:transform .45s cubic-bezier(.23,1,.32,1),
+             border-radius .45s,
+             box-shadow .45s;
+}
+
+.costume-img-emoji{font-size:3rem;position:relative;z-index:1;transition:transform .45s}
+.costume-card:hover .costume-img-emoji{transform:scale(1.15)}
+.costume-img-ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.65) 0%,transparent 50%);opacity:0;transition:opacity .35s;z-index:1}
 .costume-card:hover .costume-img-ov{opacity:1}
 .cid-badge{position:absolute;top:.55rem;left:.55rem;background:rgba(0,0,0,.65);color:var(--gd);font-size:.52rem;font-weight:700;letter-spacing:1.5px;padding:.22rem .5rem;border-radius:3px;font-family:'Inter',sans-serif;z-index:2}
-.costume-info{padding:.9rem 1rem 1rem;flex:1;display:flex;flex-direction:column}
+
+.costume-info{padding:.9rem 1rem 1rem;flex:1;display:flex;flex-direction:column;background:var(--b2);border-radius:0 0 12px 12px}
 .costume-id{font-size:.54rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--rl);margin-bottom:.25rem}
 .costume-name{font-family:'Playfair Display',serif;font-size:.9rem;font-weight:700;color:var(--nd);margin-bottom:.8rem;line-height:1.3;flex:1}
 .eq-btn{display:flex;align-items:center;justify-content:center;gap:.5rem;width:100%;background:var(--nd);color:#fff;border:none;padding:.65rem;font-family:'Inter',sans-serif;font-size:.63rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;text-align:center;text-decoration:none;cursor:pointer;border-radius:4px;transition:background .3s,color .3s}
 .eq-btn svg{width:14px;height:14px;flex-shrink:0}
 .eq-btn:hover{background:var(--gd);color:var(--nd)}
 
-/* NO RESULTS */
 .no-results{text-align:center;padding:4rem 2rem;display:none}
 .no-results p{color:var(--mt);font-size:.9rem}
 
@@ -100,10 +151,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:var(--nd);paddin
 .cf-text p{font-size:.82rem;color:rgba(255,255,255,.4);font-weight:300;line-height:1.7;max-width:380px}
 .cf-actions{display:flex;gap:.8rem;flex-wrap:wrap;flex-shrink:0}
 .btn-gold{background:var(--gd);color:var(--nd);padding:.78rem 1.8rem;font-family:'Inter',sans-serif;font-weight:700;font-size:.67rem;letter-spacing:2px;text-transform:uppercase;text-decoration:none;border-radius:2px;display:inline-flex;align-items:center;gap:.5rem;transition:all .3s;border:none;cursor:pointer}
-.btn-gold svg{width:14px;height:14px}
 .btn-gold:hover{background:var(--gl);transform:translateY(-2px)}
 .btn-outline{background:transparent;color:rgba(255,255,255,.6);padding:.78rem 1.8rem;font-family:'Inter',sans-serif;font-weight:600;font-size:.67rem;letter-spacing:2px;text-transform:uppercase;text-decoration:none;border:1px solid rgba(255,255,255,.2);border-radius:2px;display:inline-flex;align-items:center;gap:.5rem;transition:all .3s}
-.btn-outline svg{width:14px;height:14px}
 .btn-outline:hover{color:#fff;border-color:rgba(255,255,255,.55)}
 
 /* FOOTER */
@@ -133,6 +182,7 @@ footer{background:var(--nd);border-top:1px solid rgba(255,255,255,.05);padding:2
 /* MOBILE */
 @media(max-width:900px){
   .costume-grid{grid-template-columns:repeat(3,1fr)}
+  .costume-card:hover .costume-img-wrap{transform:scale(1.15)}
 }
 @media(max-width:768px){
   nav{padding:.75rem 1.1rem}
@@ -140,31 +190,31 @@ footer{background:var(--nd);border-top:1px solid rgba(255,255,255,.05);padding:2
   .burger{display:flex}
   .nav-links.open{display:flex;flex-direction:column;position:fixed;inset:0;background:var(--nd);align-items:center;justify-content:center;gap:1.8rem;z-index:9999}
   .nav-links.open li a{font-size:.85rem;letter-spacing:2.5px;padding:.6rem 1rem}
-  .back-bar{top:50px;padding:.55rem 1rem}
-  .filter-bar{top:calc(50px + 36px)}
+  .filter-bar{top:50px}
   .costume-grid{grid-template-columns:repeat(2,1fr);gap:.8rem}
+  .costume-card:hover .costume-img-wrap{transform:scale(1.1)}
   .cant-find{flex-direction:column;text-align:center}
   .cf-actions{justify-content:center;width:100%}
   .footer-inner{flex-direction:column;align-items:flex-start;gap:1.2rem}
   .ph-meta-div{display:none}
-  .back-current{max-width:120px}
+  .nav-current{max-width:100px}
   .drive-link-sm span{display:none}
-  .drive-link-sm{padding:.32rem .6rem}
+  .filter-row2{gap:.5rem}
 }
 @media(max-width:480px){
   .costume-grid{grid-template-columns:repeat(2,1fr);gap:.6rem}
   .costume-info{padding:.75rem .8rem .85rem}
   .costume-name{font-size:.82rem}
-  .eq-btn{font-size:.6rem;padding:.55rem;letter-spacing:1.5px}
+  .eq-btn{font-size:.58rem;padding:.55rem;letter-spacing:1.2px}
   .eq-btn .eq-label{display:none}
   .eq-btn svg{width:16px;height:16px}
   .footer-links{gap:.8rem}
+  .costume-card:hover .costume-img-wrap{transform:scale(1.08)}
 }
 </style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
   <a href="index.html" class="nav-logo">
     <img src="logo.png" alt="CostumeWorld Logo"/>
@@ -183,34 +233,6 @@ footer{background:var(--nd);border-top:1px solid rgba(255,255,255,.05);padding:2
   </div>
 </nav>
 
-<!-- BACK BAR with prev/next category arrows -->
-<div class="back-bar">
-  <div class="back-bar-inner">
-    <div class="back-nav">
-      <!-- PREV CATEGORY -->
-      <a href="#" class="back-btn" id="prevBtn" title="Previous category">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
-      </a>
-      <!-- BACK TO CATALOG -->
-      <a href="index.html#catalog" class="back-btn">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
-        All Categories
-      </a>
-      <span class="back-sep">/</span>
-      <span class="back-current" id="breadCat">Category</span>
-      <!-- NEXT CATEGORY -->
-      <a href="#" class="back-btn" id="nextBtn" title="Next category">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
-      </a>
-    </div>
-    <!-- DRIVE LINK -->
-    <a href="https://drive.google.com/YOUR-FOLDER-LINK" target="_blank" class="drive-link-sm" id="driveLink">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h5l2 3h9a2 2 0 012 2z"/></svg>
-      <span>All Photos on Drive</span>
-    </a>
-  </div>
-</div>
-
 <!-- PAGE HERO -->
 <div class="ph">
   <div class="ph-inner">
@@ -228,15 +250,43 @@ footer{background:var(--nd);border-top:1px solid rgba(255,255,255,.05);padding:2
   </div>
 </div>
 
-<!-- FILTER -->
+<!-- COMBINED FILTER + NAV BAR -->
 <div class="filter-bar">
   <div class="filter-inner">
-    <input type="text" class="search-box" id="searchBox" placeholder="Search costumes..." oninput="filterCostumes()"/>
-    <span class="count-badge" id="countBadge">6 costumes</span>
+    <!-- ROW 1: search -->
+    <div class="filter-row1">
+      <input type="text" class="search-box" id="searchBox" placeholder="Search costumes in this category..." oninput="filterCostumes()"/>
+      <span class="count-badge" id="countBadge">6 costumes</span>
+    </div>
+    <!-- ROW 2: prev/next arrows + drive link -->
+    <div class="filter-row2">
+      <div class="cat-nav">
+        <a href="#" class="nav-arrow" id="prevBtn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+          Prev
+        </a>
+        <span class="nav-sep">/</span>
+        <span class="nav-current" id="navCurrent">Category</span>
+        <span class="nav-sep">/</span>
+        <a href="#" class="nav-arrow" id="nextBtn">
+          Next
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+        </a>
+        <span class="nav-sep">|</span>
+        <a href="index.html#catalog" class="nav-arrow">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+          All Categories
+        </a>
+      </div>
+      <a href="https://drive.google.com/YOUR-FOLDER-LINK" target="_blank" class="drive-link-sm" id="driveLink">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h5l2 3h9a2 2 0 012 2z"/></svg>
+        <span>All Photos on Drive</span>
+      </a>
+    </div>
   </div>
 </div>
 
-<!-- GRID -->
+<!-- COSTUME GRID -->
 <section class="grid-section">
   <div class="container">
     <div class="costume-grid" id="costumeGrid"></div>
@@ -244,7 +294,7 @@ footer{background:var(--nd);border-top:1px solid rgba(255,255,255,.05);padding:2
     <div class="cant-find">
       <div class="cf-text">
         <h3>Need Something <em>Specific?</em></h3>
-        <p>Many more costumes not listed here. Customisation available. Just send us a message.</p>
+        <p>Many more costumes not listed here. Customisation also available. Just send us a message.</p>
       </div>
       <div class="cf-actions">
         <a href="#" class="btn-gold" id="waEnquire" target="_blank">
@@ -293,31 +343,28 @@ footer{background:var(--nd);border-top:1px solid rgba(255,255,255,.05);padding:2
 
 <script>
 const WA='910000000000';
-const DRIVE_LINK='https://drive.google.com/YOUR-FOLDER-LINK';
-
 const CAT_KEYS=['western','trees','retro','patriotic','mythological','lavani','ladies','krishna','kids','jackets','group','ghaghra','fruits','folk','countries','cartoons','blazers','bharatanatyam','animals','accessories'];
-
 const CATEGORIES={
-  western:       {name:'Western Dress',            emoji:'💃',prefix:'WES',desc:'Gowns, prom dresses, and western-style outfits.',       bg:'linear-gradient(145deg,#1a0535,#4a0e8f,#6b21b5)', costumes:['Placeholder Costume 1','Placeholder Costume 2','Placeholder Costume 3','Placeholder Costume 4','Placeholder Costume 5','Placeholder Costume 6']},
-  trees:         {name:'Trees & Flowers',           emoji:'🌸',prefix:'TRF',desc:'Nature-themed costumes — trees, flowers, botanical.',   bg:'linear-gradient(145deg,#003300,#006600,#228B22)', costumes:['Placeholder Costume 1','Placeholder Costume 2','Placeholder Costume 3','Placeholder Costume 4','Placeholder Costume 5','Placeholder Costume 6']},
-  retro:         {name:'Retro',                     emoji:'🕺',prefix:'RET',desc:'Vintage and retro style costumes from iconic decades.', bg:'linear-gradient(145deg,#2d1b00,#7c4f00,#b87333)', costumes:['Placeholder Costume 1','Placeholder Costume 2','Placeholder Costume 3','Placeholder Costume 4','Placeholder Costume 5','Placeholder Costume 6']},
-  patriotic:     {name:'Patriotic & Freedom Fighters',emoji:'🇮🇳',prefix:'PAT',desc:"Honour India's heroes with patriotic costumes.",     bg:'linear-gradient(145deg,#003d00,#cc5500,#ff8800)', costumes:['Placeholder Costume 1','Placeholder Costume 2','Placeholder Costume 3','Placeholder Costume 4','Placeholder Costume 5','Placeholder Costume 6']},
-  mythological:  {name:'Mythological',              emoji:'🔱',prefix:'MYT',desc:'Gods, goddesses, and epics from Indian mythology.',    bg:'linear-gradient(145deg,#1a0020,#6b0080,#9900cc)', costumes:['Placeholder Costume 1','Placeholder Costume 2','Placeholder Costume 3','Placeholder Costume 4','Placeholder Costume 5','Placeholder Costume 6']},
-  lavani:        {name:'Lavani & Marathi Saree',    emoji:'🥻',prefix:'LAV',desc:'Vibrant Lavani and traditional Marathi saree.',       bg:'linear-gradient(145deg,#7c0010,#cc0022,#e8003a)', costumes:['Placeholder Costume 1','Placeholder Costume 2','Placeholder Costume 3','Placeholder Costume 4','Placeholder Costume 5','Placeholder Costume 6']},
-  ladies:        {name:'Ladies Costumes',           emoji:'👗',prefix:'LAD',desc:'A wide range of ladies costumes for all occasions.',   bg:'linear-gradient(145deg,#001a4d,#0033cc,#0055ff)', costumes:['Placeholder Costume 1','Placeholder Costume 2','Placeholder Costume 3','Placeholder Costume 4','Placeholder Costume 5','Placeholder Costume 6']},
-  krishna:       {name:'Krishna Janmashtami',       emoji:'🦚',prefix:'KRI',desc:'Krishna, Radha, and Janmashtami costumes.',           bg:'linear-gradient(145deg,#003322,#006644,#009966)', costumes:['Placeholder Costume 1','Placeholder Costume 2','Placeholder Costume 3','Placeholder Costume 4','Placeholder Costume 5','Placeholder Costume 6']},
-  kids:          {name:'Kids Costumes',             emoji:'👧',prefix:'KID',desc:'Adorable costumes in all themes for children.',        bg:'linear-gradient(145deg,#1a0d00,#664400,#cc8800)', costumes:['Placeholder Costume 1','Placeholder Costume 2','Placeholder Costume 3','Placeholder Costume 4','Placeholder Costume 5','Placeholder Costume 6']},
-  jackets:       {name:'Jackets & Chest Pieces',    emoji:'🧥',prefix:'JAC',desc:'Bold jackets, chest pieces, and armour styles.',      bg:'linear-gradient(145deg,#0d0033,#330066,#660099)', costumes:['Placeholder Costume 1','Placeholder Costume 2','Placeholder Costume 3','Placeholder Costume 4','Placeholder Costume 5','Placeholder Costume 6']},
-  group:         {name:'Group Dances',              emoji:'🎶',prefix:'GRP',desc:'Matching costume sets for group performances.',        bg:'linear-gradient(145deg,#001a33,#003366,#004d99)', costumes:['Placeholder Costume 1','Placeholder Costume 2','Placeholder Costume 3','Placeholder Costume 4','Placeholder Costume 5','Placeholder Costume 6']},
-  ghaghra:       {name:'Ghaghra',                   emoji:'🌀',prefix:'GHA',desc:'Rajasthani and folk Ghaghra costumes.',               bg:'linear-gradient(145deg,#330022,#990066,#cc0088)', costumes:['Placeholder Costume 1','Placeholder Costume 2','Placeholder Costume 3','Placeholder Costume 4','Placeholder Costume 5','Placeholder Costume 6']},
-  fruits:        {name:'Fruits & Vegetables',       emoji:'🍎',prefix:'FRV',desc:'Fun fruit and vegetable costumes for kids shows.',    bg:'linear-gradient(145deg,#1a1a00,#4d4d00,#808000)', costumes:['Placeholder Costume 1','Placeholder Costume 2','Placeholder Costume 3','Placeholder Costume 4','Placeholder Costume 5','Placeholder Costume 6']},
-  folk:          {name:'Folk & Classical Dance',    emoji:'🎵',prefix:'FOL',desc:'Traditional folk and classical dance costumes.',      bg:'linear-gradient(145deg,#1a0000,#660000,#990000)', costumes:['Placeholder Costume 1','Placeholder Costume 2','Placeholder Costume 3','Placeholder Costume 4','Placeholder Costume 5','Placeholder Costume 6']},
-  countries:     {name:'Countries & States',        emoji:'🌍',prefix:'CNT',desc:'Represent cultures from around the world.',           bg:'linear-gradient(145deg,#001533,#002b66,#004099)', costumes:['Placeholder Costume 1','Placeholder Costume 2','Placeholder Costume 3','Placeholder Costume 4','Placeholder Costume 5','Placeholder Costume 6']},
-  cartoons:      {name:'Cartoons & Mascots',        emoji:'🎠',prefix:'CAR',desc:'Beloved cartoon characters and mascots.',             bg:'linear-gradient(145deg,#002200,#005500,#008800)', costumes:['Placeholder Costume 1','Placeholder Costume 2','Placeholder Costume 3','Placeholder Costume 4','Placeholder Costume 5','Placeholder Costume 6']},
-  blazers:       {name:'Blazers & Graduation',      emoji:'🎓',prefix:'BLZ',desc:'Smart blazers, graduation gowns, and formals.',      bg:'linear-gradient(145deg,#1a0020,#4d0060,#800099)', costumes:['Placeholder Costume 1','Placeholder Costume 2','Placeholder Costume 3','Placeholder Costume 4','Placeholder Costume 5','Placeholder Costume 6']},
-  bharatanatyam: {name:'Bharatanatyam',             emoji:'🙏',prefix:'BHA',desc:'Authentic Bharatanatyam costumes with jewellery.',   bg:'linear-gradient(145deg,#001a1a,#003333,#006666)', costumes:['Placeholder Costume 1','Placeholder Costume 2','Placeholder Costume 3','Placeholder Costume 4','Placeholder Costume 5','Placeholder Costume 6']},
-  animals:       {name:'Animals & Birds',           emoji:'🦁',prefix:'ANB',desc:'Animal and bird costumes for kids and adults.',      bg:'linear-gradient(145deg,#0d1a00,#1a3300,#2d5500)', costumes:['Placeholder Costume 1','Placeholder Costume 2','Placeholder Costume 3','Placeholder Costume 4','Placeholder Costume 5','Placeholder Costume 6']},
-  accessories:   {name:'Accessories',               emoji:'💍',prefix:'ACC',desc:'Jewellery, props, crowns, and accessories.',         bg:'linear-gradient(145deg,#1a1500,#4d3d00,#806600)', costumes:['Placeholder Costume 1','Placeholder Costume 2','Placeholder Costume 3','Placeholder Costume 4','Placeholder Costume 5','Placeholder Costume 6']}
+  western:       {name:'Western Dress',              emoji:'💃',prefix:'WES',desc:'Gowns, prom dresses, and western-style outfits.',      bg:'linear-gradient(145deg,#1a0535,#4a0e8f,#6b21b5)',costumes:['Placeholder Costume 1','Placeholder Costume 2','Placeholder Costume 3','Placeholder Costume 4','Placeholder Costume 5','Placeholder Costume 6']},
+  trees:         {name:'Trees & Flowers',             emoji:'🌸',prefix:'TRF',desc:'Nature-themed costumes — trees, flowers, botanical.',  bg:'linear-gradient(145deg,#003300,#006600,#228B22)',costumes:['Placeholder Costume 1','Placeholder Costume 2','Placeholder Costume 3','Placeholder Costume 4','Placeholder Costume 5','Placeholder Costume 6']},
+  retro:         {name:'Retro',                       emoji:'🕺',prefix:'RET',desc:'Vintage and retro style costumes from iconic decades.',bg:'linear-gradient(145deg,#2d1b00,#7c4f00,#b87333)',costumes:['Placeholder Costume 1','Placeholder Costume 2','Placeholder Costume 3','Placeholder Costume 4','Placeholder Costume 5','Placeholder Costume 6']},
+  patriotic:     {name:'Patriotic & Freedom Fighters',emoji:'🇮🇳',prefix:'PAT',desc:"Honour India's heroes with patriotic costumes.",    bg:'linear-gradient(145deg,#003d00,#cc5500,#ff8800)',costumes:['Placeholder Costume 1','Placeholder Costume 2','Placeholder Costume 3','Placeholder Costume 4','Placeholder Costume 5','Placeholder Costume 6']},
+  mythological:  {name:'Mythological',                emoji:'🔱',prefix:'MYT',desc:'Gods, goddesses, and epics from Indian mythology.',   bg:'linear-gradient(145deg,#1a0020,#6b0080,#9900cc)',costumes:['Placeholder Costume 1','Placeholder Costume 2','Placeholder Costume 3','Placeholder Costume 4','Placeholder Costume 5','Placeholder Costume 6']},
+  lavani:        {name:'Lavani & Marathi Saree',      emoji:'🥻',prefix:'LAV',desc:'Vibrant Lavani and traditional Marathi saree.',      bg:'linear-gradient(145deg,#7c0010,#cc0022,#e8003a)',costumes:['Placeholder Costume 1','Placeholder Costume 2','Placeholder Costume 3','Placeholder Costume 4','Placeholder Costume 5','Placeholder Costume 6']},
+  ladies:        {name:'Ladies Costumes',             emoji:'👗',prefix:'LAD',desc:'A wide range of ladies costumes for all occasions.',  bg:'linear-gradient(145deg,#001a4d,#0033cc,#0055ff)',costumes:['Placeholder Costume 1','Placeholder Costume 2','Placeholder Costume 3','Placeholder Costume 4','Placeholder Costume 5','Placeholder Costume 6']},
+  krishna:       {name:'Krishna Janmashtami',         emoji:'🦚',prefix:'KRI',desc:'Krishna, Radha, and Janmashtami costumes.',          bg:'linear-gradient(145deg,#003322,#006644,#009966)',costumes:['Placeholder Costume 1','Placeholder Costume 2','Placeholder Costume 3','Placeholder Costume 4','Placeholder Costume 5','Placeholder Costume 6']},
+  kids:          {name:'Kids Costumes',               emoji:'👧',prefix:'KID',desc:'Adorable costumes in all themes for children.',       bg:'linear-gradient(145deg,#1a0d00,#664400,#cc8800)',costumes:['Placeholder Costume 1','Placeholder Costume 2','Placeholder Costume 3','Placeholder Costume 4','Placeholder Costume 5','Placeholder Costume 6']},
+  jackets:       {name:'Jackets & Chest Pieces',      emoji:'🧥',prefix:'JAC',desc:'Bold jackets, chest pieces, and armour styles.',     bg:'linear-gradient(145deg,#0d0033,#330066,#660099)',costumes:['Placeholder Costume 1','Placeholder Costume 2','Placeholder Costume 3','Placeholder Costume 4','Placeholder Costume 5','Placeholder Costume 6']},
+  group:         {name:'Group Dances',                emoji:'🎶',prefix:'GRP',desc:'Matching costume sets for group performances.',       bg:'linear-gradient(145deg,#001a33,#003366,#004d99)',costumes:['Placeholder Costume 1','Placeholder Costume 2','Placeholder Costume 3','Placeholder Costume 4','Placeholder Costume 5','Placeholder Costume 6']},
+  ghaghra:       {name:'Ghaghra',                     emoji:'🌀',prefix:'GHA',desc:'Rajasthani and folk Ghaghra costumes.',              bg:'linear-gradient(145deg,#330022,#990066,#cc0088)',costumes:['Placeholder Costume 1','Placeholder Costume 2','Placeholder Costume 3','Placeholder Costume 4','Placeholder Costume 5','Placeholder Costume 6']},
+  fruits:        {name:'Fruits & Vegetables',         emoji:'🍎',prefix:'FRV',desc:'Fun fruit and vegetable costumes for kids shows.',   bg:'linear-gradient(145deg,#1a1a00,#4d4d00,#808000)',costumes:['Placeholder Costume 1','Placeholder Costume 2','Placeholder Costume 3','Placeholder Costume 4','Placeholder Costume 5','Placeholder Costume 6']},
+  folk:          {name:'Folk & Classical Dance',      emoji:'🎵',prefix:'FOL',desc:'Traditional folk and classical dance costumes.',     bg:'linear-gradient(145deg,#1a0000,#660000,#990000)',costumes:['Placeholder Costume 1','Placeholder Costume 2','Placeholder Costume 3','Placeholder Costume 4','Placeholder Costume 5','Placeholder Costume 6']},
+  countries:     {name:'Countries & States',          emoji:'🌍',prefix:'CNT',desc:'Represent cultures from around the world.',          bg:'linear-gradient(145deg,#001533,#002b66,#004099)',costumes:['Placeholder Costume 1','Placeholder Costume 2','Placeholder Costume 3','Placeholder Costume 4','Placeholder Costume 5','Placeholder Costume 6']},
+  cartoons:      {name:'Cartoons & Mascots',          emoji:'🎠',prefix:'CAR',desc:'Beloved cartoon characters and mascots.',            bg:'linear-gradient(145deg,#002200,#005500,#008800)',costumes:['Placeholder Costume 1','Placeholder Costume 2','Placeholder Costume 3','Placeholder Costume 4','Placeholder Costume 5','Placeholder Costume 6']},
+  blazers:       {name:'Blazers & Graduation',        emoji:'🎓',prefix:'BLZ',desc:'Smart blazers, graduation gowns, and formals.',     bg:'linear-gradient(145deg,#1a0020,#4d0060,#800099)',costumes:['Placeholder Costume 1','Placeholder Costume 2','Placeholder Costume 3','Placeholder Costume 4','Placeholder Costume 5','Placeholder Costume 6']},
+  bharatanatyam: {name:'Bharatanatyam',               emoji:'🙏',prefix:'BHA',desc:'Authentic Bharatanatyam costumes with jewellery.',  bg:'linear-gradient(145deg,#001a1a,#003333,#006666)',costumes:['Placeholder Costume 1','Placeholder Costume 2','Placeholder Costume 3','Placeholder Costume 4','Placeholder Costume 5','Placeholder Costume 6']},
+  animals:       {name:'Animals & Birds',             emoji:'🦁',prefix:'ANB',desc:'Animal and bird costumes for kids and adults.',     bg:'linear-gradient(145deg,#0d1a00,#1a3300,#2d5500)',costumes:['Placeholder Costume 1','Placeholder Costume 2','Placeholder Costume 3','Placeholder Costume 4','Placeholder Costume 5','Placeholder Costume 6']},
+  accessories:   {name:'Accessories',                 emoji:'💍',prefix:'ACC',desc:'Jewellery, props, crowns, and accessories.',        bg:'linear-gradient(145deg,#1a1500,#4d3d00,#806600)',costumes:['Placeholder Costume 1','Placeholder Costume 2','Placeholder Costume 3','Placeholder Costume 4','Placeholder Costume 5','Placeholder Costume 6']}
 };
 
 let allCards=[];
@@ -327,10 +374,9 @@ function init(){
   const idx=CAT_KEYS.indexOf(key);
   const cat=CATEGORIES[key]||CATEGORIES.mythological;
 
-  // Titles & meta
   document.title=cat.name+' – CostumeWorld';
-  document.getElementById('breadCat').textContent=cat.name;
   document.getElementById('catEmoji').textContent=cat.emoji;
+  document.getElementById('navCurrent').textContent=cat.name;
   const words=cat.name.split(' ');
   const half=Math.ceil(words.length/2);
   document.getElementById('catTitle').innerHTML=words.slice(0,half).join(' ')+' <em>'+words.slice(half).join(' ')+'</em>';
@@ -343,9 +389,9 @@ function init(){
   document.getElementById('waFloat').href='https://wa.me/'+WA+'?text='+waMsg;
   document.getElementById('waEnquire').href='https://wa.me/'+WA+'?text='+waMsg;
 
-  // Prev / Next arrows
-  const prevKey=idx>0?CAT_KEYS[idx-1]:CAT_KEYS[CAT_KEYS.length-1];
-  const nextKey=idx<CAT_KEYS.length-1?CAT_KEYS[idx+1]:CAT_KEYS[0];
+  // Prev/Next buttons
+  const prevKey=CAT_KEYS[idx>0?idx-1:CAT_KEYS.length-1];
+  const nextKey=CAT_KEYS[idx<CAT_KEYS.length-1?idx+1:0];
   const prevBtn=document.getElementById('prevBtn');
   const nextBtn=document.getElementById('nextBtn');
   prevBtn.href='category.html?cat='+prevKey;
@@ -353,7 +399,7 @@ function init(){
   nextBtn.href='category.html?cat='+nextKey;
   nextBtn.title=CATEGORIES[nextKey].name+' →';
 
-  // Build costume cards
+  // Build cards
   const grid=document.getElementById('costumeGrid');
   cat.costumes.forEach((name,i)=>{
     const id=cat.prefix+'-'+String(i+1).padStart(3,'0');
@@ -361,12 +407,13 @@ function init(){
     const card=document.createElement('div');
     card.className='costume-card';
     card.dataset.name=name.toLowerCase();
-    // Image placeholder — replace emoji span with <img src="..."> when you have photos
     card.innerHTML=`
-      <div class="costume-img" style="background:${cat.bg}">
-        <span class="costume-img-emoji">${cat.emoji}</span>
-        <div class="costume-img-ov"></div>
-        <span class="cid-badge">${id}</span>
+      <div class="costume-img-wrap">
+        <div class="costume-img" style="background:${cat.bg}">
+          <span class="costume-img-emoji">${cat.emoji}</span>
+          <div class="costume-img-ov"></div>
+          <span class="cid-badge">${id}</span>
+        </div>
       </div>
       <div class="costume-info">
         <div class="costume-id">${id}</div>
