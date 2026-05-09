@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>CostumeWorld – Premium Costume Rentals</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--nd:#010D18;--nv:#042C53;--nm:#0B3D6E;--ry:#0C5499;--rl:#1A6FC4;--b1:#E8F1FA;--b2:#D4E6F5;--b3:#B8D4EC;--gd:#C9963A;--gl:#E8B86D;--wh:#fff;--tx:#0D1B2A;--mt:#3D5A73}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--b1);color:var(--tx);overflow-x:hidden}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:var(--nd);padding:.85rem 2.5rem;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(201,150,58,.15);box-shadow:0 2px 30px rgba(1,13,24,.6);transition:padding .3s}
+.nav-logo{display:flex;align-items:center;gap:.6rem;text-decoration:none;flex-shrink:0}
+.nav-logo img{width:36px;height:36px;object-fit:contain;border-radius:4px}
+.nav-logo-text{font-family:'Playfair Display',serif;font-weight:800;font-size:1.35rem;color:#fff;line-height:1;white-space:nowrap}
+.nav-logo-text span{color:var(--gd)}
+.nav-logo-text sup{font-family:'Inter',sans-serif;font-size:.4rem;font-weight:600;color:var(--gl);letter-spacing:2px;text-transform:uppercase;vertical-align:super;margin-left:2px}
+.nav-links{display:flex;gap:0;list-style:none;align-items:center}
+.nav-links li a{color:rgba(255,255,255,.72);text-decoration:none;font-weight:600;font-size:.7rem;letter-spacing:1.8px;text-transform:uppercase;transition:color .3s;position:relative;padding:.5rem 1rem;cursor:pointer;white-space:nowrap;display:block}
+.nav-links li a::after{content:'';position:absolute;bottom:0;left:1rem;right:1rem;height:1px;background:var(--gd);transform:scaleX(0);transition:transform .3s}
+.nav-links li a:hover{color:#fff}
+.nav-links li a:hover::after{transform:scaleX(1)}
+.nav-book{color:var(--gd)!important;border:1px solid var(--gd)!important;padding:.42rem 1.2rem!important;letter-spacing:1.5px!important;transition:all .3s!important;margin-left:.5rem}
+.nav-book:hover{background:var(--gd)!important;color:var(--nd)!important}
+.nav-book::after{display:none!important}
+.burger{display:none;flex-direction:column;gap:5px;cursor:pointer;flex-shrink:0}
+.burger span{display:block;width:24px;height:1.5px;background:#fff;transition:all .3s}
+
+/* HERO */
+.hero{min-height:100vh;background:var(--nd);display:flex;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden;padding:7rem 1.5rem 5rem}
+.hero::before{content:'';position:absolute;top:40%;left:50%;transform:translate(-50%,-50%);width:600px;height:600px;background:radial-gradient(ellipse,rgba(12,84,153,.22) 0%,transparent 70%);pointer-events:none}
+.hero-bg{position:absolute;font-family:'Playfair Display',serif;font-size:clamp(5rem,16vw,14rem);font-weight:900;color:rgba(255,255,255,.022);top:50%;left:50%;transform:translate(-50%,-50%);white-space:nowrap;pointer-events:none;letter-spacing:-8px;user-select:none}
+.hero-inner{position:relative;z-index:2;max-width:680px;width:100%}
+.hero-eye{display:inline-flex;align-items:center;gap:.7rem;border:1px solid rgba(201,150,58,.35);color:var(--gl);font-size:.62rem;font-weight:600;padding:.44rem 1.1rem;letter-spacing:3px;text-transform:uppercase;margin-bottom:1.8rem;animation:fadeUp .9s ease both}
+.edot{width:4px;height:4px;background:var(--gd);border-radius:50%;flex-shrink:0}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.6rem,7vw,5.2rem);font-weight:900;color:#fff;line-height:1.05;letter-spacing:-2px;animation:fadeUp .9s ease .15s both}
+.hero h1 em{font-style:italic;color:var(--gd)}
+.hero-rule{width:42px;height:1px;background:var(--gd);margin:1.6rem auto;animation:fadeUp .9s ease .3s both}
+.hero p{font-size:clamp(.88rem,2vw,1rem);color:rgba(255,255,255,.48);line-height:1.85;font-weight:300;animation:fadeUp .9s ease .4s both;max-width:440px;margin-left:auto;margin-right:auto;margin-bottom:2rem}
+.hero-contacts{display:flex;align-items:center;justify-content:center;gap:.8rem;margin-bottom:2.2rem;flex-wrap:wrap;animation:fadeUp .9s ease .45s both}
+.hc-btn{display:inline-flex;align-items:center;gap:.45rem;color:rgba(255,255,255,.62);text-decoration:none;font-size:.7rem;font-weight:600;letter-spacing:.8px;padding:.42rem .9rem;border:1px solid rgba(255,255,255,.14);border-radius:50px;transition:all .3s}
+.hc-btn:hover{color:#fff;border-color:var(--gd);background:rgba(201,150,58,.1)}
+.hc-btn svg{width:14px;height:14px;flex-shrink:0}
+.hc-div{width:1px;height:14px;background:rgba(255,255,255,.1)}
+.hero-btns{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;animation:fadeUp .9s ease .55s both}
+.btn-gold{background:var(--gd);color:var(--nd);padding:.86rem 2.2rem;font-family:'Inter',sans-serif;font-weight:700;font-size:.7rem;letter-spacing:2.5px;text-transform:uppercase;text-decoration:none;border:1px solid var(--gd);border-radius:2px;display:inline-block;transition:all .3s;cursor:pointer}
+.btn-gold:hover{background:var(--gl);transform:translateY(-2px);box-shadow:0 10px 28px rgba(201,150,58,.3)}
+.btn-ghost{background:transparent;color:#fff;padding:.86rem 2.2rem;font-family:'Inter',sans-serif;font-weight:600;font-size:.7rem;letter-spacing:2.5px;text-transform:uppercase;text-decoration:none;border:1px solid rgba(255,255,255,.28);border-radius:2px;display:inline-block;transition:all .3s;cursor:pointer}
+.btn-ghost:hover{border-color:rgba(255,255,255,.65);background:rgba(255,255,255,.06);transform:translateY(-2px)}
+/* REMOVED hero-scroll entirely */
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+
+/* STATS */
+.stats{background:var(--ry);border-top:1px solid rgba(201,150,58,.18);border-bottom:1px solid rgba(201,150,58,.18)}
+.stats-inner{max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap}
+.stat-item{flex:1 1 0;min-width:0;padding:2.2rem 1rem;text-align:center;border-right:1px solid rgba(255,255,255,.1);transition:background .3s;position:relative}
+.stat-item:last-child{border-right:none}
+.stat-item:hover{background:rgba(255,255,255,.07)}
+.stat-item::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--gd);transform:scaleX(0);transition:transform .4s}
+.stat-item:hover::before{transform:scaleX(1)}
+.stat-icon{font-size:1.2rem;display:block;margin-bottom:.45rem}
+.stat-num{font-family:'Playfair Display',serif;font-size:2.4rem;font-weight:800;color:var(--gd);display:block;line-height:1;letter-spacing:-1px}
+.stat-lbl{font-size:.58rem;color:rgba(255,255,255,.45);margin-top:.45rem;font-weight:500;letter-spacing:2px;text-transform:uppercase;line-height:1.4}
+
+/* SECTIONS */
+section{padding:5rem 1.5rem}
+.container{max-width:1140px;margin:0 auto}
+.sec-eye{display:inline-flex;align-items:center;gap:.7rem;font-size:.6rem;font-weight:700;letter-spacing:3.5px;text-transform:uppercase;color:var(--rl);margin-bottom:1rem}
+.sec-eye::before,.sec-eye::after{content:'';width:18px;height:1px;background:var(--rl);opacity:.6}
+.sec-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,3rem);font-weight:800;color:var(--nv);line-height:1.12;letter-spacing:-.5px}
+.sec-title em{font-style:italic;color:var(--ry)}
+.sec-title-lt{color:#fff}
+.sec-title-lt em{color:var(--gd)}
+.sec-sub{color:var(--mt);font-size:.9rem;line-height:1.85;max-width:450px;margin-top:.8rem}
+.sec-hdr{text-align:center;margin-bottom:3rem}
+.sec-hdr .sec-sub{margin:.8rem auto 0}
+.grule{width:32px;height:1px;background:var(--gd);margin-top:1.3rem}
+.sec-hdr .grule{margin:1.3rem auto 0}
+
+/* CATALOG */
+#catalog{background:var(--b2)}
+.cat-section-hdr{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;margin-bottom:1rem}
+.drive-link{display:inline-flex;align-items:center;gap:.5rem;background:rgba(201,150,58,.12);border:1px solid rgba(201,150,58,.35);color:var(--gd);text-decoration:none;font-size:.68rem;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;padding:.5rem 1.1rem;border-radius:4px;transition:all .3s;flex-shrink:0}
+.drive-link:hover{background:var(--gd);color:var(--nd)}
+.drive-link svg{width:14px;height:14px;flex-shrink:0}
+
+/* CATEGORY GRID — no reveal delay, immediate */
+.cat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+
+/* CARD — zoom overlay on hover */
+.cat-card{position:relative;overflow:visible;cursor:pointer;aspect-ratio:1/1;text-decoration:none;display:block;border-radius:16px;transition:transform .35s cubic-bezier(.175,.885,.32,1.275),box-shadow .35s,z-index 0s}
+.cat-card:hover{transform:scale(1.18);box-shadow:0 30px 70px rgba(4,44,83,.4);z-index:10}
+.cat-bg{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:clamp(2rem,4vw,3.2rem);border-radius:16px;overflow:hidden;transition:filter .35s}
+.cat-card:hover .cat-bg{filter:brightness(1.15)}
+.c1 .cat-bg{background:linear-gradient(145deg,#1a0535,#4a0e8f,#6b21b5)}
+.c2 .cat-bg{background:linear-gradient(145deg,#003300,#006600,#228B22)}
+.c3 .cat-bg{background:linear-gradient(145deg,#2d1b00,#7c4f00,#b87333)}
+.c4 .cat-bg{background:linear-gradient(145deg,#003d00,#cc5500,#ff8800)}
+.c5 .cat-bg{background:linear-gradient(145deg,#1a0020,#6b0080,#9900cc)}
+.c6 .cat-bg{background:linear-gradient(145deg,#7c0010,#cc0022,#e8003a)}
+.c7 .cat-bg{background:linear-gradient(145deg,#001a4d,#0033cc,#0055ff)}
+.c8 .cat-bg{background:linear-gradient(145deg,#003322,#006644,#009966)}
+.c9 .cat-bg{background:linear-gradient(145deg,#1a0d00,#664400,#cc8800)}
+.c10 .cat-bg{background:linear-gradient(145deg,#0d0033,#330066,#660099)}
+.c11 .cat-bg{background:linear-gradient(145deg,#001a33,#003366,#004d99)}
+.c12 .cat-bg{background:linear-gradient(145deg,#330022,#990066,#cc0088)}
+.c13 .cat-bg{background:linear-gradient(145deg,#1a1a00,#4d4d00,#808000)}
+.c14 .cat-bg{background:linear-gradient(145deg,#1a0000,#660000,#990000)}
+.c15 .cat-bg{background:linear-gradient(145deg,#001533,#002b66,#004099)}
+.c16 .cat-bg{background:linear-gradient(145deg,#002200,#005500,#008800)}
+.c17 .cat-bg{background:linear-gradient(145deg,#1a0020,#4d0060,#800099)}
+.c18 .cat-bg{background:linear-gradient(145deg,#001a1a,#003333,#006666)}
+.c19 .cat-bg{background:linear-gradient(145deg,#0d1a00,#1a3300,#2d5500)}
+.c20 .cat-bg{background:linear-gradient(145deg,#1a1500,#4d3d00,#806600)}
+.cat-veil{position:absolute;inset:0;border-radius:16px;background:linear-gradient(to top,rgba(0,0,0,.82) 0%,rgba(0,0,0,.1) 55%,transparent 100%);transition:background .3s}
+.cat-card:hover .cat-veil{background:linear-gradient(to top,rgba(0,0,0,.9) 0%,rgba(0,0,0,.2) 60%,rgba(0,0,0,.05) 100%)}
+.cat-content{position:absolute;bottom:0;left:0;right:0;padding:.8rem .85rem .95rem;z-index:2}
+.cat-name{font-family:'Playfair Display',serif;font-size:clamp(.68rem,.85vw,.86rem);font-weight:700;color:#fff;line-height:1.25}
+.cat-count{font-size:.56rem;color:rgba(255,255,255,.42);margin-top:.18rem;letter-spacing:.5px}
+.cat-arrow{position:absolute;top:.65rem;right:.65rem;width:26px;height:26px;border:1px solid rgba(255,255,255,.3);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:.65rem;font-weight:700;background:rgba(0,0,0,.3);opacity:0;transform:translateX(-5px);transition:all .35s;z-index:3}
+.cat-card:hover .cat-arrow{opacity:1;transform:translateX(0);border-color:var(--gd);color:var(--gd);background:rgba(0,0,0,.5)}
+
+/* HOW IT WORKS */
+#how{background:var(--b1)}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--b3)}
+.step{padding:2.5rem 1.5rem;border-right:1px solid var(--b3);position:relative;transition:background .3s}
+.step:last-child{border-right:none}
+.step:hover{background:var(--b2)}
+.step-bar{position:absolute;top:0;left:0;right:0;height:2px;background:var(--gd);transform:scaleX(0);transform-origin:left;transition:transform .45s}
+.step:hover .step-bar{transform:scaleX(1)}
+.step-num{font-family:'Playfair Display',serif;font-size:3.2rem;font-weight:900;color:var(--b3);line-height:1;margin-bottom:1rem;letter-spacing:-2px}
+.step-icon{font-size:1.5rem;display:block;margin-bottom:.85rem}
+.step h3{font-family:'Playfair Display',serif;font-size:.95rem;font-weight:700;color:var(--nv);margin-bottom:.6rem}
+.step p{font-size:.82rem;color:var(--mt);line-height:1.75}
+
+/* FEATURES */
+#features{background:var(--nd);padding:5rem 1.5rem}
+.feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.06)}
+.feat-item{background:var(--nd);padding:1.8rem 1.6rem;border:1px solid rgba(255,255,255,.05);transition:background .3s,border-color .3s;position:relative}
+.feat-item:hover{background:rgba(12,84,153,.18);border-color:rgba(201,150,58,.2)}
+.feat-item::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--gd);transform:scaleX(0);transform-origin:left;transition:transform .4s}
+.feat-item:hover::before{transform:scaleX(1)}
+.feat-icon{font-size:1.6rem;margin-bottom:.8rem;display:block}
+.feat-title{font-family:'Playfair Display',serif;font-size:.92rem;font-weight:700;color:#fff;margin-bottom:.45rem}
+.feat-desc{font-size:.8rem;color:rgba(255,255,255,.4);line-height:1.7;font-weight:300}
+
+/* SEASONAL */
+#seasonal{background:var(--nv);padding:5rem 1.5rem;text-align:center;position:relative;overflow:hidden;border-top:1px solid rgba(201,150,58,.14);border-bottom:1px solid rgba(201,150,58,.14)}
+.seasonal-ghost{position:absolute;font-family:'Playfair Display',serif;font-size:14rem;font-weight:900;color:rgba(255,255,255,.016);top:50%;left:50%;transform:translate(-50%,-50%);white-space:nowrap;pointer-events:none;user-select:none}
+.seasonal-eye{font-size:.6rem;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--gd);margin-bottom:1.2rem}
+#seasonal h2{font-family:'Playfair Display',serif;font-size:clamp(1.9rem,5vw,3.5rem);font-weight:900;color:#fff;line-height:1.08;letter-spacing:-1px;margin-bottom:.9rem}
+#seasonal h2 em{font-style:italic;color:var(--gd)}
+.s-rule{width:34px;height:1px;background:var(--gd);margin:0 auto 1.3rem}
+#seasonal p{color:rgba(255,255,255,.4);font-size:.92rem;max-width:400px;margin:0 auto 2.5rem;font-weight:300;line-height:1.85}
+
+/* CUSTOMERS */
+#customers{background:var(--b2)}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-bottom:4rem}
+.testi-card{background:var(--b1);border:1px solid var(--b3);padding:2rem;position:relative;border-radius:4px;transition:border-color .3s,box-shadow .3s,transform .3s}
+.testi-card:hover{border-color:rgba(201,150,58,.45);box-shadow:0 16px 50px rgba(4,44,83,.12);transform:translateY(-4px)}
+.testi-card::before{content:'\201C';position:absolute;top:1rem;right:1.5rem;font-family:'Playfair Display',serif;font-size:4.5rem;color:var(--b3);line-height:1;pointer-events:none}
+.testi-stars{color:var(--gd);font-size:.66rem;letter-spacing:4px;margin-bottom:1.1rem}
+.testi-text{font-size:.86rem;color:var(--mt);line-height:1.85;margin-bottom:1.6rem}
+.testi-div{width:24px;height:1px;background:var(--gd);margin-bottom:1.1rem}
+.testi-auth{display:flex;align-items:center;gap:.75rem}
+.testi-av{width:36px;height:36px;border-radius:50%;background:var(--nv);border:1px solid rgba(201,150,58,.3);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-weight:700;font-size:.8rem;color:var(--gd);flex-shrink:0}
+.testi-name{font-family:'Playfair Display',serif;font-weight:700;font-size:.86rem;color:var(--nv)}
+.testi-role{font-size:.68rem;color:var(--mt);margin-top:.15rem}
+
+/* SCHOOLS */
+.schools-section{background:var(--nd);border-radius:8px;padding:2.5rem 2rem}
+.schools-hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.8rem;flex-wrap:wrap;gap:1rem}
+.schools-hdr h3{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:800;color:#fff}
+.schools-hdr h3 em{font-style:italic;color:var(--gd)}
+.expand-btn{background:transparent;border:1px solid rgba(201,150,58,.4);color:var(--gd);font-family:'Inter',sans-serif;font-size:.65rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;padding:.4rem 1rem;cursor:pointer;border-radius:2px;transition:all .3s;flex-shrink:0}
+.expand-btn:hover{background:var(--gd);color:var(--nd)}
+.marquee-outer{overflow:hidden;position:relative;transition:max-height .5s ease,opacity .4s ease;max-height:200px;opacity:1}
+.marquee-outer.collapsed{max-height:0;opacity:0;pointer-events:none}
+.marquee-outer::before,.marquee-outer::after{content:'';position:absolute;top:0;bottom:0;width:60px;z-index:2;pointer-events:none}
+.marquee-outer::before{left:0;background:linear-gradient(to right,var(--nd),transparent)}
+.marquee-outer::after{right:0;background:linear-gradient(to left,var(--nd),transparent)}
+.marquee-track{display:flex;gap:1rem;animation:marquee 30s linear infinite;width:max-content}
+.marquee-track.paused{animation-play-state:paused}
+.school-badge{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:.7rem 1.2rem;display:flex;align-items:center;gap:.7rem;white-space:nowrap;transition:border-color .3s,transform .3s,box-shadow .3s,background .3s;cursor:default}
+.school-badge:hover{border-color:rgba(201,150,58,.5);transform:translateY(-5px);box-shadow:0 10px 30px rgba(0,0,0,.4);background:rgba(201,150,58,.08)}
+.school-logo{width:32px;height:32px;border-radius:6px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0}
+.school-name{font-size:.72rem;font-weight:600;color:rgba(255,255,255,.7)}
+@keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.schools-expanded{display:none;margin-top:1.5rem}
+.schools-expanded.open{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:.7rem}
+.school-grid-item{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:8px;padding:.7rem 1rem;display:flex;align-items:center;gap:.6rem;transition:border-color .3s,background .3s}
+.school-grid-item:hover{border-color:rgba(201,150,58,.3);background:rgba(201,150,58,.06)}
+.sgi-logo{width:28px;height:28px;border-radius:5px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;font-size:.95rem;flex-shrink:0}
+.sgi-name{font-size:.7rem;font-weight:600;color:rgba(255,255,255,.65)}
+
+/* CONTACT */
+#contact{background:var(--nd);padding:5rem 1.5rem;border-top:1px solid rgba(201,150,58,.14)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:start;max-width:1140px;margin:0 auto}
+.map-wrap{border-radius:10px;overflow:hidden;border:1px solid rgba(201,150,58,.2);box-shadow:0 8px 40px rgba(0,0,0,.4);width:100%}
+.map-wrap iframe{width:100%;height:420px;display:block;border:none}
+.map-placeholder{width:100%;height:420px;background:linear-gradient(135deg,#0a1628,#0c2a4a,#0e3060);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.7rem;color:rgba(255,255,255,.28);border-radius:10px}
+.map-ph-icon{font-size:2.5rem;opacity:.35}
+.map-ph-text{font-size:.72rem;letter-spacing:2px;text-transform:uppercase}
+.map-ph-sub{font-size:.62rem;color:rgba(255,255,255,.18)}
+.owner-details{display:flex;flex-direction:column;gap:1.5rem}
+.owner-label{font-size:.58rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gd);margin-bottom:.4rem}
+.owner-name{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:800;color:#fff;line-height:1.1}
+.owner-name em{font-style:italic;color:var(--gd)}
+.owner-tagline{font-size:.78rem;color:rgba(255,255,255,.35);margin-top:.3rem;font-weight:300}
+.owner-divider{width:36px;height:1px;background:var(--gd);margin:.6rem 0}
+.contact-list{display:flex;flex-direction:column;gap:.85rem}
+.contact-row{display:flex;align-items:flex-start;gap:.9rem}
+.cr-icon{width:34px;height:34px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:.95rem;flex-shrink:0;transition:border-color .3s,background .3s}
+.contact-row:hover .cr-icon{border-color:rgba(201,150,58,.4);background:rgba(201,150,58,.08)}
+.cr-label{font-size:.56rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:.18rem}
+.cr-val{font-size:.84rem;color:rgba(255,255,255,.7)}
+.cr-val a{color:rgba(255,255,255,.7);text-decoration:none;transition:color .3s}
+.cr-val a:hover{color:var(--gd)}
+.timing-grid{display:grid;grid-template-columns:1fr 1fr;gap:.4rem .8rem;margin-top:.2rem}
+.timing-item{font-size:.75rem;color:rgba(255,255,255,.55)}
+.timing-item span:first-child{color:rgba(255,255,255,.3);font-size:.65rem;display:block}
+
+/* FOOTER */
+footer{background:var(--nd);border-top:1px solid rgba(255,255,255,.05);padding:2rem 1.5rem}
+.footer-inner{max-width:1140px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.5rem}
+.footer-logo{display:flex;align-items:center;gap:.5rem;text-decoration:none}
+.footer-logo img{width:30px;height:30px;object-fit:contain;border-radius:3px}
+.footer-logo-text{font-family:'Playfair Display',serif;font-weight:800;font-size:1.2rem;color:#fff}
+.footer-logo-text span{color:var(--gd)}
+.footer-tagline{font-size:.54rem;letter-spacing:3px;text-transform:uppercase;color:var(--gd);opacity:.7;margin-top:.35rem;display:block}
+.footer-links{display:flex;gap:1.5rem;flex-wrap:wrap}
+.footer-links a{color:rgba(255,255,255,.35);text-decoration:none;font-size:.72rem;letter-spacing:1px;text-transform:uppercase;transition:color .3s;cursor:pointer}
+.footer-links a:hover{color:var(--gd)}
+.footer-socials{display:flex;gap:.5rem}
+.fs-link{width:32px;height:32px;border:1px solid rgba(255,255,255,.1);border-radius:50%;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.32);text-decoration:none;font-size:.68rem;font-weight:600;transition:all .3s}
+.fs-link:hover{border-color:var(--gd);color:var(--gd)}
+.footer-copy{max-width:1140px;margin:1.5rem auto 0;text-align:center;font-size:.68rem;color:rgba(255,255,255,.18);padding-top:1.2rem;border-top:1px solid rgba(255,255,255,.05)}
+
+/* FLOATING */
+.wa{position:fixed;bottom:2rem;right:2rem;z-index:999;width:52px;height:52px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;box-shadow:0 4px 20px rgba(37,211,102,.45);transition:all .3s}
+.wa:hover{transform:scale(1.1);box-shadow:0 8px 30px rgba(37,211,102,.6)}
+.wa svg{width:26px;height:26px;fill:#fff}
+.btt{position:fixed;bottom:6.2rem;right:2rem;z-index:998;width:44px;height:44px;background:var(--nv);border:none;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;font-size:1rem;box-shadow:0 4px 16px rgba(4,44,83,.5);opacity:0;pointer-events:none;transition:opacity .3s,transform .3s}
+.btt.visible{opacity:1;pointer-events:all}
+.btt:hover{transform:translateY(-3px);background:var(--ry)}
+
+/* REVEAL — fast threshold so cards appear immediately */
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .5s ease,transform .5s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+/* MOBILE */
+@media(max-width:1100px){
+  .nav-links li a{padding:.5rem .7rem;font-size:.65rem;letter-spacing:1.2px}
+}
+@media(max-width:900px){
+  .feat-grid{grid-template-columns:repeat(2,1fr)}
+  .testi-grid{grid-template-columns:1fr 1fr}
+  .contact-grid{grid-template-columns:1fr}
+  .map-wrap iframe,.map-placeholder{height:300px}
+  .steps{grid-template-columns:1fr 1fr}
+  .step:nth-child(2){border-right:none}
+  .step:nth-child(3){border-top:1px solid var(--b3);border-right:1px solid var(--b3)}
+  .step:nth-child(4){border-top:1px solid var(--b3);border-right:none}
+  .schools-expanded.open{grid-template-columns:repeat(auto-fill,minmax(150px,1fr))}
+  .cat-card:hover{transform:scale(1.1)}
+}
+@media(max-width:768px){
+  nav{padding:.8rem 1.2rem}
+  .nav-links{display:none}
+  .burger{display:flex}
+  .nav-links.open{display:flex;flex-direction:column;position:fixed;inset:0;background:var(--nd);align-items:center;justify-content:center;gap:1.8rem;z-index:9999}
+  .nav-links.open li a{font-size:.85rem;letter-spacing:2.5px;padding:.6rem 1rem}
+  .stat-item{flex:0 0 33.333%;border-bottom:1px solid rgba(255,255,255,.08)}
+  .stat-item:nth-child(3){border-right:none}
+  .stat-item:nth-child(4),.stat-item:nth-child(5){flex:0 0 50%;border-bottom:none}
+  .stat-item:nth-child(5){border-right:none}
+  .testi-grid{grid-template-columns:1fr}
+  .footer-inner{flex-direction:column;align-items:flex-start;gap:1.2rem}
+  .hc-div{display:none}
+  .hero-contacts{gap:.5rem}
+  .cat-section-hdr{flex-direction:column;align-items:flex-start}
+  /* On mobile, enlarge is subtle */
+  .cat-card:hover{transform:scale(1.08)}
+  .timing-grid{grid-template-columns:1fr}
+}
+@media(max-width:480px){
+  .cat-grid{gap:.5rem}
+  .cat-name{font-size:.65rem}
+  .cat-count{display:none}
+  .cat-content{padding:.6rem .65rem .75rem}
+  .feat-grid{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr}
+  .step{border-right:none!important;border-top:1px solid var(--b3)!important}
+  .step:first-child{border-top:none!important}
+  .stat-item{flex:0 0 50%!important;border-right:1px solid rgba(255,255,255,.08)!important;border-bottom:1px solid rgba(255,255,255,.08)!important}
+  .stat-item:nth-child(2n){border-right:none!important}
+  .stat-item:nth-child(5){flex:0 0 100%!important;border-right:none!important;border-bottom:none!important}
+  .schools-expanded.open{grid-template-columns:1fr 1fr}
+  .footer-links{gap:.8rem}
+  .hero h1{letter-spacing:-1px}
+  .cat-card:hover{transform:scale(1.05)}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#" class="nav-logo" onclick="window.scrollTo({top:0,behavior:'smooth'});return false">
+    <img src="logo.png" alt="CostumeWorld Logo"/>
+    <div class="nav-logo-text">Costume<span>World</span><sup>Est. 2015</sup></div>
+  </a>
+  <ul class="nav-links" id="nl">
+    <li><a onclick="navTo('home')">Home</a></li>
+    <li><a onclick="navTo('catalog')">Catalog</a></li>
+    <li><a onclick="navTo('customers')">Customers</a></li>
+    <li><a onclick="navTo('seasonal')">What's New</a></li>
+    <li><a onclick="navTo('features')">About Us</a></li>
+    <li><a onclick="navTo('contact')" class="nav-book">Contact</a></li>
+  </ul>
+  <div class="burger" id="burger" onclick="document.getElementById('nl').classList.toggle('open')">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-bg">COSTUME</div>
+  <div class="hero-inner">
+    <div class="hero-eye"><span class="edot"></span>Premium Costume Rentals Since 2015<span class="edot"></span></div>
+    <h1>Dress Up.<br><em>Stand Out.</em><br>Be Legendary.</h1>
+    <div class="hero-rule"></div>
+    <p>Hundreds of premium costumes for every occasion — school plays, events, festivals, and beyond.</p>
+    <div class="hero-contacts">
+      <a href="https://g.page/YOUR-PROFILE" target="_blank" class="hc-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+        Google Maps
+      </a>
+      <div class="hc-div"></div>
+      <a href="https://instagram.com/YOUR_HANDLE" target="_blank" class="hc-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        Instagram
+      </a>
+      <div class="hc-div"></div>
+      <a href="tel:+910000000000" class="hc-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.05 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        +91 00000 00000
+      </a>
+    </div>
+    <div class="hero-btns">
+      <a class="btn-gold" onclick="navTo('catalog')">Browse Costumes</a>
+      <a class="btn-ghost" onclick="navTo('contact')">Visit Our Store</a>
+    </div>
+  </div>
+  <!-- SCROLL text removed -->
+</section>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stats-inner">
+    <div class="stat-item"><span class="stat-icon">🎭</span><span class="stat-num" data-count="500">0</span><div class="stat-lbl">Costumes Available</div></div>
+    <div class="stat-item"><span class="stat-icon">😄</span><span class="stat-num" data-count="1200">0</span><div class="stat-lbl">Happy Customers</div></div>
+    <div class="stat-item"><span class="stat-icon">🏆</span><span class="stat-num" data-count="10">0</span><div class="stat-lbl">Years of Service</div></div>
+    <div class="stat-item"><span class="stat-icon">🏫</span><span class="stat-num" data-count="80">0</span><div class="stat-lbl">Schools Served</div></div>
+    <div class="stat-item"><span class="stat-icon">🗺️</span><span class="stat-num" data-count="12">0</span><div class="stat-lbl">Cities Reached</div></div>
+  </div>
+</div>
+
+<!-- CATALOG -->
+<section id="catalog">
+  <div class="container">
+    <div class="sec-hdr">
+      <div class="sec-eye">Our Collection</div>
+      <h2 class="sec-title">Browse by <em>Category</em></h2>
+      <div class="grule"></div>
+      <p class="sec-sub">20 categories covering every theme, culture, occasion, and character.</p>
+    </div>
+    <div class="cat-section-hdr">
+      <div style="font-size:.8rem;color:var(--mt)">Click any category to explore. Or browse all photos on Google Drive:</div>
+      <a href="https://drive.google.com/YOUR-FOLDER-LINK" target="_blank" class="drive-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h5l2 3h9a2 2 0 012 2z"/></svg>
+        View All Photos on Drive
+      </a>
+    </div>
+    <!-- NO reveal class on grid — shows immediately -->
+    <div class="cat-grid">
+      <a href="category.html?cat=western" class="cat-card c1"><div class="cat-bg">💃</div><div class="cat-veil"></div><div class="cat-content"><div class="cat-name">Western Dress</div><div class="cat-count">Gowns &amp; More</div></div><div class="cat-arrow">→</div></a>
+      <a href="category.html?cat=trees" class="cat-card c2"><div class="cat-bg">🌸</div><div class="cat-veil"></div><div class="cat-content"><div class="cat-name">Trees &amp; Flowers</div><div class="cat-count">Nature Themes</div></div><div class="cat-arrow">→</div></a>
+      <a href="category.html?cat=retro" class="cat-card c3"><div class="cat-bg">🕺</div><div class="cat-veil"></div><div class="cat-content"><div class="cat-name">Retro</div><div class="cat-count">Vintage Styles</div></div><div class="cat-arrow">→</div></a>
+      <a href="category.html?cat=patriotic" class="cat-card c4"><div class="cat-bg">🇮🇳</div><div class="cat-veil"></div><div class="cat-content"><div class="cat-name">Patriotic &amp; Freedom Fighters</div><div class="cat-count">Independence Themes</div></div><div class="cat-arrow">→</div></a>
+      <a href="category.html?cat=mythological" class="cat-card c5"><div class="cat-bg">🔱</div><div class="cat-veil"></div><div class="cat-content"><div class="cat-name">Mythological</div><div class="cat-count">Gods &amp; Epics</div></div><div class="cat-arrow">→</div></a>
+      <a href="category.html?cat=lavani" class="cat-card c6"><div class="cat-bg">🥻</div><div class="cat-veil"></div><div class="cat-content"><div class="cat-name">Lavani &amp; Marathi Saree</div><div class="cat-count">Maharashtra Folk</div></div><div class="cat-arrow">→</div></a>
+      <a href="category.html?cat=ladies" class="cat-card c7"><div class="cat-bg">👗</div><div class="cat-veil"></div><div class="cat-content"><div class="cat-name">Ladies Costumes</div><div class="cat-count">Wide Variety</div></div><div class="cat-arrow">→</div></a>
+      <a href="category.html?cat=krishna" class="cat-card c8"><div class="cat-bg">🦚</div><div class="cat-veil"></div><div class="cat-content"><div class="cat-name">Krishna Janmashtami</div><div class="cat-count">Krishna &amp; Radha</div></div><div class="cat-arrow">→</div></a>
+      <a href="category.html?cat=kids" class="cat-card c9"><div class="cat-bg">👧</div><div class="cat-veil"></div><div class="cat-content"><div class="cat-name">Kids Costumes</div><div class="cat-count">All Themes</div></div><div class="cat-arrow">→</div></a>
+      <a href="category.html?cat=jackets" class="cat-card c10"><div class="cat-bg">🧥</div><div class="cat-veil"></div><div class="cat-content"><div class="cat-name">Jackets &amp; Chest Pieces</div><div class="cat-count">Bold Looks</div></div><div class="cat-arrow">→</div></a>
+      <a href="category.html?cat=group" class="cat-card c11"><div class="cat-bg">🎶</div><div class="cat-veil"></div><div class="cat-content"><div class="cat-name">Group Dances</div><div class="cat-count">Matching Sets</div></div><div class="cat-arrow">→</div></a>
+      <a href="category.html?cat=ghaghra" class="cat-card c12"><div class="cat-bg">🌀</div><div class="cat-veil"></div><div class="cat-content"><div class="cat-name">Ghaghra</div><div class="cat-count">Rajasthani &amp; Folk</div></div><div class="cat-arrow">→</div></a>
+      <a href="category.html?cat=fruits" class="cat-card c13"><div class="cat-bg">🍎</div><div class="cat-veil"></div><div class="cat-content"><div class="cat-name">Fruits &amp; Vegetables</div><div class="cat-count">Fun &amp; Quirky</div></div><div class="cat-arrow">→</div></a>
+      <a href="category.html?cat=folk" class="cat-card c14"><div class="cat-bg">🎵</div><div class="cat-veil"></div><div class="cat-content"><div class="cat-name">Folk &amp; Classical Dance</div><div class="cat-count">Traditional Forms</div></div><div class="cat-arrow">→</div></a>
+      <a href="category.html?cat=countries" class="cat-card c15"><div class="cat-bg">🌍</div><div class="cat-veil"></div><div class="cat-content"><div class="cat-name">Countries &amp; States</div><div class="cat-count">World Cultures</div></div><div class="cat-arrow">→</div></a>
+      <a href="category.html?cat=cartoons" class="cat-card c16"><div class="cat-bg">🎠</div><div class="cat-veil"></div><div class="cat-content"><div class="cat-name">Cartoons &amp; Mascots</div><div class="cat-count">Fun Characters</div></div><div class="cat-arrow">→</div></a>
+      <a href="category.html?cat=blazers" class="cat-card c17"><div class="cat-bg">🎓</div><div class="cat-veil"></div><div class="cat-content"><div class="cat-name">Blazers &amp; Graduation</div><div class="cat-count">Gowns &amp; Formals</div></div><div class="cat-arrow">→</div></a>
+      <a href="category.html?cat=bharatanatyam" class="cat-card c18"><div class="cat-bg">🙏</div><div class="cat-veil"></div><div class="cat-content"><div class="cat-name">Bharatanatyam</div><div class="cat-count">Classical Dance</div></div><div class="cat-arrow">→</div></a>
+      <a href="category.html?cat=animals" class="cat-card c19"><div class="cat-bg">🦁</div><div class="cat-veil"></div><div class="cat-content"><div class="cat-name">Animals &amp; Birds</div><div class="cat-count">Kids &amp; Adults</div></div><div class="cat-arrow">→</div></a>
+      <a href="category.html?cat=accessories" class="cat-card c20"><div class="cat-bg">💍</div><div class="cat-veil"></div><div class="cat-content"><div class="cat-name">Accessories</div><div class="cat-count">Jewellery &amp; Props</div></div><div class="cat-arrow">→</div></a>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how">
+  <div class="container">
+    <div class="sec-hdr reveal">
+      <div class="sec-eye">The Process</div>
+      <h2 class="sec-title">Simple. <em>Seamless.</em> Sorted.</h2>
+      <div class="grule"></div>
+      <p class="sec-sub">Renting a costume should be the easiest part of your event.</p>
+    </div>
+    <div class="steps reveal" style="transition-delay:.1s">
+      <div class="step"><div class="step-bar"></div><div class="step-num">01</div><span class="step-icon">🔍</span><h3>Browse &amp; Choose</h3><p>Explore our catalog by category or occasion.</p></div>
+      <div class="step"><div class="step-bar"></div><div class="step-num">02</div><span class="step-icon">📋</span><h3>Reserve Your Date</h3><p>Contact us by phone or WhatsApp. We confirm and hold it for you.</p></div>
+      <div class="step"><div class="step-bar"></div><div class="step-num">03</div><span class="step-icon">🛍️</span><h3>Pick Up or Delivery</h3><p>Collect from our shop or we deliver to you.</p></div>
+      <div class="step"><div class="step-bar"></div><div class="step-num">04</div><span class="step-icon">🔄</span><h3>Return with Ease</h3><p>Return within the rental period. We handle all the cleaning.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES / ABOUT US -->
+<section id="features">
+  <div class="container">
+    <div class="sec-hdr reveal">
+      <div class="sec-eye" style="color:var(--rl)">Why Choose Us</div>
+      <h2 class="sec-title sec-title-lt">Everything You <em>Need</em></h2>
+      <div class="grule" style="margin:1.3rem auto 0"></div>
+      <p class="sec-sub" style="color:rgba(255,255,255,.4);margin:.8rem auto 0">We have thought of everything so you do not have to.</p>
+    </div>
+    <div class="feat-grid reveal" style="transition-delay:.1s">
+      <div class="feat-item"><span class="feat-icon">🚗</span><div class="feat-title">Pick Up &amp; Drop</div><div class="feat-desc">Convenient pick up and drop so you never worry about transport.</div></div>
+      <div class="feat-item"><span class="feat-icon">✨</span><div class="feat-title">Hygiene First</div><div class="feat-desc">Every costume is cleaned, sanitised, and pressed before it reaches you.</div></div>
+      <div class="feat-item"><span class="feat-icon">📏</span><div class="feat-title">No Size Issues</div><div class="feat-desc">All sizes available. We adjust for a perfect fit every time.</div></div>
+      <div class="feat-item"><span class="feat-icon">📦</span><div class="feat-title">Bulk Orders Welcome</div><div class="feat-desc">Schools and theaters — large group orders handled with ease.</div></div>
+      <div class="feat-item"><span class="feat-icon">🎭</span><div class="feat-title">Huge Variety</div><div class="feat-desc">20+ categories covering every theme, culture, and character.</div></div>
+      <div class="feat-item"><span class="feat-icon">🏷️</span><div class="feat-title">Packed &amp; Labelled</div><div class="feat-desc">Every costume packed neatly and labelled — perfect for bulk orders.</div></div>
+      <div class="feat-item"><span class="feat-icon">💰</span><div class="feat-title">Reasonable Cost</div><div class="feat-desc">Premium quality at fair prices.</div></div>
+      <div class="feat-item"><span class="feat-icon">💍</span><div class="feat-title">Jewellery &amp; Accessories</div><div class="feat-desc">Complete sets with matching jewellery and props included.</div></div>
+      <div class="feat-item"><span class="feat-icon">🎯</span><div class="feat-title">Complete Character Sets</div><div class="feat-desc">Full head-to-toe sets. No guessing, no missing pieces.</div></div>
+      <div class="feat-item"><span class="feat-icon">✂️</span><div class="feat-title">Customisation Possible</div><div class="feat-desc">Need something specific? We customise to match your requirement.</div></div>
+      <div class="feat-item"><span class="feat-icon">🛡️</span><div class="feat-title">Well Maintained</div><div class="feat-desc">Every piece inspected and maintained to always look stage-ready.</div></div>
+      <div class="feat-item"><span class="feat-icon">⏰</span><div class="feat-title">Flexible &amp; Punctual</div><div class="feat-desc">Always deliver on time, especially for school events.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SEASONAL / WHAT'S NEW -->
+<section id="seasonal">
+  <div class="seasonal-ghost">Season</div>
+  <div style="position:relative;z-index:2">
+    <div class="seasonal-eye">What's New</div>
+    <h2>The Season Special<br><em>Collection is Here</em></h2>
+    <div class="s-rule"></div>
+    <p>Limited pieces. Premium quality. Reserve yours before it is gone.</p>
+    <a class="btn-gold" onclick="navTo('catalog')">Explore the Collection</a>
+  </div>
+</section>
+
+<!-- CUSTOMERS + SCHOOLS -->
+<section id="customers">
+  <div class="container">
+    <div class="sec-hdr reveal">
+      <div class="sec-eye">Testimonials</div>
+      <h2 class="sec-title">Voices of Our <em>Customers</em></h2>
+      <div class="grule"></div>
+      <p class="sec-sub">We let the experiences of our customers speak for us.</p>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card reveal" style="transition-delay:.1s">
+        <div class="testi-stars">★ ★ ★ ★ ★</div>
+        <p class="testi-text">Outstanding service. The costume was immaculate and fitted perfectly. My children had the most memorable Halloween. We will not go anywhere else from now on.</p>
+        <div class="testi-div"></div>
+        <div class="testi-auth"><div class="testi-av">SR</div><div><div class="testi-name">Sarah Rahman</div><div class="testi-role">Halloween Event</div></div></div>
+      </div>
+      <div class="testi-card reveal" style="transition-delay:.2s">
+        <div class="testi-stars">★ ★ ★ ★ ★</div>
+        <p class="testi-text">We hired 20 costumes for our school production. Smooth from start to finish, impressive variety, and the team was genuinely helpful throughout.</p>
+        <div class="testi-div"></div>
+        <div class="testi-auth"><div class="testi-av">MK</div><div><div class="testi-name">Ms. Kavitha</div><div class="testi-role">School Theatre Director</div></div></div>
+      </div>
+      <div class="testi-card reveal" style="transition-delay:.3s">
+        <div class="testi-stars">★ ★ ★ ★ ★</div>
+        <p class="testi-text">The quality was far beyond what I expected at this price. My son was the star of his birthday party. Every guest wanted to know where the costume came from.</p>
+        <div class="testi-div"></div>
+        <div class="testi-auth"><div class="testi-av">AT</div><div><div class="testi-name">Ahmed Tariq</div><div class="testi-role">Birthday Celebration</div></div></div>
+      </div>
+    </div>
+    <div class="schools-section reveal">
+      <div class="schools-hdr">
+        <h3>Schools We Have <em>Served</em></h3>
+        <button class="expand-btn" id="expandBtn" onclick="toggleSchools()">View All Schools ▾</button>
+      </div>
+      <div class="marquee-outer" id="marqueeOuter">
+        <div class="marquee-track" id="marqueeTrack"></div>
+      </div>
+      <div class="schools-expanded" id="schoolsGrid"></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="sec-hdr reveal" style="margin-bottom:3rem">
+      <div class="sec-eye" style="color:var(--rl)">Find Us</div>
+      <h2 class="sec-title sec-title-lt">Visit Our <em>Store</em></h2>
+      <div class="grule" style="margin:1.3rem auto 0"></div>
+    </div>
+    <div class="contact-grid reveal" style="transition-delay:.1s">
+      <div class="map-wrap">
+        <!-- Replace with: <iframe src="YOUR_GOOGLE_MAPS_EMBED" allowfullscreen loading="lazy"></iframe> -->
+        <div class="map-placeholder">
+          <span class="map-ph-icon">📍</span>
+          <span class="map-ph-text">Your Shop Location</span>
+          <span class="map-ph-sub">Replace with Google Maps embed</span>
+        </div>
+      </div>
+      <div class="owner-details">
+        <div>
+          <div class="owner-label">Your Host</div>
+          <div class="owner-name">Owner <em>Name</em></div>
+          <div class="owner-tagline">CostumeWorld — Est. 2015</div>
+          <div class="owner-divider"></div>
+        </div>
+        <div class="contact-list">
+          <div class="contact-row"><div class="cr-icon">📍</div><div><div class="cr-label">Address</div><div class="cr-val">Your Shop Address, Area,<br>City, State – PIN</div></div></div>
+          <div class="contact-row"><div class="cr-icon">🔍</div><div><div class="cr-label">Google Profile</div><div class="cr-val"><a href="https://g.page/YOUR-PROFILE" target="_blank">View on Google Maps →</a></div></div></div>
+          <div class="contact-row"><div class="cr-icon">📸</div><div><div class="cr-label">Instagram</div><div class="cr-val"><a href="https://instagram.com/YOUR_HANDLE" target="_blank">@your_handle</a></div></div></div>
+          <div class="contact-row"><div class="cr-icon">✉️</div><div><div class="cr-label">Email</div><div class="cr-val"><a href="mailto:your@email.com">your@email.com</a></div></div></div>
+          <div class="contact-row"><div class="cr-icon">📞</div><div><div class="cr-label">Phone &amp; WhatsApp</div><div class="cr-val"><a href="tel:+910000000000">+91 00000 00000</a></div></div></div>
+          <div class="contact-row"><div class="cr-icon">🕐</div><div><div class="cr-label">Shop Timings</div><div class="timing-grid"><div class="timing-item"><span>Mon – Sat</span>10:00 AM – 8:00 PM</div><div class="timing-item"><span>Sunday</span>11:00 AM – 6:00 PM</div></div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <a href="#" class="footer-logo" onclick="window.scrollTo({top:0,behavior:'smooth'});return false">
+        <img src="logo.png" alt="CostumeWorld Logo"/>
+        <div class="footer-logo-text">Costume<span>World</span></div>
+      </a>
+      <span class="footer-tagline">Dress Up. Stand Out. Be Remembered.</span>
+    </div>
+    <div class="footer-links">
+      <a onclick="navTo('catalog')">Catalog</a>
+      <a onclick="navTo('customers')">Customers</a>
+      <a onclick="navTo('seasonal')">What's New</a>
+      <a onclick="navTo('features')">About Us</a>
+      <a onclick="navTo('contact')">Contact</a>
+    </div>
+    <div class="footer-socials">
+      <a href="https://instagram.com/YOUR_HANDLE" target="_blank" class="fs-link">Ig</a>
+      <a href="https://g.page/YOUR-PROFILE" target="_blank" class="fs-link">G</a>
+      <a href="https://wa.me/910000000000" target="_blank" class="fs-link">Wa</a>
+    </div>
+  </div>
+  <div class="footer-copy">© 2025 CostumeWorld. All rights reserved.</div>
+</footer>
+
+<a href="https://wa.me/910000000000" class="wa" target="_blank"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+<a href="#" class="btt" id="btt">↑</a>
+
+<script>
+const SCHOOLS=[
+  {n:"St. Xavier's School",l:'🏫'},{n:'Delhi Public School',l:'🎓'},{n:'Kendriya Vidyalaya',l:'📚'},
+  {n:'Ryan International',l:'🏫'},{n:'The Cathedral School',l:'🎓'},{n:'Bombay Scottish',l:'📚'},
+  {n:'Jamnabai Narsee School',l:'🏫'},{n:'Podar International',l:'🎓'},{n:'Orchid International',l:'📚'},
+  {n:'Vibgyor High',l:'🏫'},{n:'Dhirubhai Ambani School',l:'🎓'},{n:'JBCN International',l:'📚'},
+  {n:'Euro School',l:'🏫'},{n:'Witty International',l:'🎓'},{n:'Hiranandani Foundation',l:'📚'},
+  {n:'Nahar International',l:'🏫'},{n:'Oberoi International',l:'🎓'},{n:'Billabong High',l:'📚'},
+  {n:"The Shri Ram School",l:'🏫'},{n:'Lotus Valley School',l:'🎓'},{n:'Amity International',l:'📚'},
+  {n:'GD Goenka School',l:'🏫'},{n:'Stepping Stones School',l:'🎓'},{n:'Sanskriti School',l:'📚'},
+  {n:'Army Public School',l:'🏫'},{n:'Modern School',l:'🎓'},{n:'Springdales School',l:'📚'},
+  {n:'Bal Bharati School',l:'🏫'},{n:'Blue Bells School',l:'🎓'},{n:'Tagore Baal Niketan',l:'📚'},
+  {n:"St. Mary's School",l:'🏫'},{n:'Holy Cross School',l:'🎓'},{n:'Sacred Heart School',l:'📚'},
+  {n:'Don Bosco School',l:'🏫'},{n:'Loyola School',l:'🎓'},{n:'Carmel Convent School',l:'📚'},
+  {n:"St. Anne's School",l:'🏫'},{n:'Presentation Convent',l:'🎓'},{n:'Auxilium School',l:'📚'},
+  {n:'MES School',l:'🏫'},{n:'Vidya Mandir School',l:'🎓'},{n:'Saraswati Vidyalaya',l:'📚'},
+  {n:'Guru Nanak School',l:'🏫'},{n:'DAV Public School',l:'🎓'},{n:'Arya Vidya Mandir',l:'📚'},
+  {n:'Kalpataru School',l:'🏫'},{n:'Orchids The School',l:'🎓'},{n:'Edify School',l:'📚'},
+  {n:'Beacon High School',l:'🏫'},{n:'Cambridge School',l:'🎓'},{n:'Oxford High School',l:'📚'}
+];
+
+const track=document.getElementById('marqueeTrack');
+const grid=document.getElementById('schoolsGrid');
+[...SCHOOLS,...SCHOOLS].forEach(s=>{
+  const b=document.createElement('div');
+  b.className='school-badge';
+  b.innerHTML=`<div class="school-logo">${s.l}</div><div class="school-name">${s.n}</div>`;
+  b.addEventListener('mouseenter',()=>track.classList.add('paused'));
+  b.addEventListener('mouseleave',()=>track.classList.remove('paused'));
+  track.appendChild(b);
+});
+SCHOOLS.forEach(s=>{
+  const i=document.createElement('div');
+  i.className='school-grid-item';
+  i.innerHTML=`<div class="sgi-logo">${s.l}</div><div class="sgi-name">${s.n}</div>`;
+  grid.appendChild(i);
+});
+
+let schoolsOpen=false;
+function toggleSchools(){
+  schoolsOpen=!schoolsOpen;
+  document.getElementById('marqueeOuter').classList.toggle('collapsed',schoolsOpen);
+  document.getElementById('schoolsGrid').classList.toggle('open',schoolsOpen);
+  document.getElementById('expandBtn').textContent=schoolsOpen?'Hide Schools ▴':'View All Schools ▾';
+}
+
+function navTo(id){
+  document.getElementById('nl').classList.remove('open');
+  if(id==='home'){window.scrollTo({top:0,behavior:'smooth'});return;}
+  const el=document.getElementById(id);
+  if(el){const top=el.getBoundingClientRect().top+scrollY-62;window.scrollTo({top,behavior:'smooth'});}
+}
+
+window.addEventListener('scroll',()=>{
+  document.getElementById('btt').classList.toggle('visible',scrollY>400);
+});
+
+function animateCounter(el){
+  const target=parseInt(el.dataset.count),steps=60,dur=2200;
+  let cur=0;const inc=target/steps;
+  const t=setInterval(()=>{
+    cur+=inc;
+    if(cur>=target){el.textContent=target.toLocaleString()+'+';clearInterval(t);}
+    else{el.textContent=Math.floor(cur).toLocaleString()+'+';}
+  },dur/steps);
+}
+
+// Low threshold (0.05) so elements appear almost immediately when scrolled into view
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.classList.add('visible');
+      if(e.target.classList.contains('stat-num'))animateCounter(e.target);
+      obs.unobserve(e.target);
+    }
+  });
+},{threshold:0.05,rootMargin:'0px 0px -30px 0px'});
+document.querySelectorAll('.reveal,.stat-num').forEach(el=>obs.observe(el));
+
+document.querySelectorAll('.nav-links li a').forEach(a=>a.addEventListener('click',()=>document.getElementById('nl').classList.remove('open')));
+</script>
+</body>
+</html>
