@@ -3,7 +3,15 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>CostumeWorld – Premium Costume Rentals</title>
+<meta name="description" content="Rent costumes in Dharwad, Karnataka for fancy dress, Bharatanatyam, folk dance, school annual days, and more. Complete sets with jewellery. Trusted by 50+ schools. Affordable prices. Pick up and drop available."/>
+<meta name="keywords" content="costume rental Dharwad, Karnataka, fancy dress rental, bulk costume rental schools, Bharatanatyam costume rental, dance costume rental Hubli-Dharwad, school annual day costumes, mythological costume rental"/>
+<title>Harihar's Costumes</title>
+<title>Costume Rentals in Dharwad | Fancy Dress, Dance, Bulk Orders | Harihar's Costumes</title>
+<meta property="og:title" content="Harihar's Costumes – Costume Rentals Across Karnataka"/>
+<meta property="og:description" content="500+ costumes for every occasion. Complete sets with jewellery. Trusted by 50+ schools across Karnataka, based in Dharwad"/>
+<meta property="og:image" content="https://yoursite.com/logo.png"/>
+<meta property="og:url" content="https://yoursite.com"/>
+<meta property="og:type" content="website"/>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
@@ -39,7 +47,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:var(--nd);paddin
 .hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.6rem,7vw,5.2rem);font-weight:900;color:#fff;line-height:1.05;letter-spacing:-2px;animation:fadeUp .9s ease .15s both}
 .hero h1 em{font-style:italic;color:var(--gd)}
 .hero-rule{width:42px;height:1px;background:var(--gd);margin:1.6rem auto;animation:fadeUp .9s ease .3s both}
-.hero p{font-size:clamp(.88rem,2vw,1rem);color:rgba(255,255,255,.48);line-height:1.85;font-weight:300;animation:fadeUp .9s ease .4s both;max-width:440px;margin-left:auto;margin-right:auto;margin-bottom:2rem}
+.hero p{font-size:clamp(.88rem,2vw,1rem);color:rgba(255,255,255,.48);line-height:1.85;font-weight:300;animation:fadeUp .9s ease .4s both;max: width 580px;margin-left:auto;margin-right:auto;margin-bottom:2rem}
 .hero-contacts{display:flex;align-items:center;justify-content:center;gap:.8rem;margin-bottom:2.2rem;flex-wrap:wrap;animation:fadeUp .9s ease .45s both}
 .hc-btn{display:inline-flex;align-items:center;gap:.45rem;color:rgba(255,255,255,.62);text-decoration:none;font-size:.7rem;font-weight:600;letter-spacing:.8px;padding:.42rem .9rem;border:1px solid rgba(255,255,255,.14);border-radius:50px;transition:all .3s}
 .hc-btn:hover{color:#fff;border-color:var(--gd);background:rgba(201,150,58,.1)}
@@ -149,7 +157,7 @@ section{padding:5rem 1.5rem}
 .feat-desc{font-size:.8rem;color:rgba(255,255,255,.4);line-height:1.7;font-weight:300}
 
 /* SEASONAL */
-#seasonal{background:var(--nv);padding:5rem 1.5rem;text-align:center;position:relative;overflow:hidden;border-top:1px solid rgba(201,150,58,.14);border-bottom:1px solid rgba(201,150,58,.14)}
+#seasonal{background:#042C53;padding:5rem 1.5rem;text-align:center;position:relative;overflow:hidden;border-top:1px solid rgba(201,150,58,.14);border-bottom:1px solid rgba(201,150,58,.14)}
 .seasonal-ghost{position:absolute;font-family:'Playfair Display',serif;font-size:14rem;font-weight:900;color:rgba(255,255,255,.016);top:50%;left:50%;transform:translate(-50%,-50%);white-space:nowrap;pointer-events:none;user-select:none}
 .seasonal-eye{font-size:.6rem;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--gd);margin-bottom:1.2rem}
 #seasonal h2{font-family:'Playfair Display',serif;font-size:clamp(1.9rem,5vw,3.5rem);font-weight:900;color:#fff;line-height:1.08;letter-spacing:-1px;margin-bottom:.9rem}
@@ -311,15 +319,15 @@ footer{background:var(--nd);border-top:1px solid rgba(255,255,255,.05);padding:2
 <!-- NAV -->
 <nav id="nav">
   <a href="#" class="nav-logo" onclick="window.scrollTo({top:0,behavior:'smooth'});return false">
-    <img src="logo.png" alt="CostumeWorld Logo"/>
-    <div class="nav-logo-text">Costume<span>World</span><sup>Est. 2015</sup></div>
+    <img src="logo.png" alt="Harihar's Costumes Logo"/>
+    <div class="nav-logo-text">Harihar's<span> Costumes</span></div>
   </a>
   <ul class="nav-links" id="nl">
     <li><a onclick="navTo('home')">Home</a></li>
+    <li><a onclick="navTo('seasonal')">What's New?</a></li>
     <li><a onclick="navTo('catalog')">Catalog</a></li>
+    <li><a onclick="navTo('how')">Why Us?</a></li>    
     <li><a onclick="navTo('customers')">Customers</a></li>
-    <li><a onclick="navTo('seasonal')">What's New</a></li>
-    <li><a onclick="navTo('features')">About Us</a></li>
     <li><a onclick="navTo('contact')" class="nav-book">Contact</a></li>
   </ul>
   <div class="burger" id="burger" onclick="document.getElementById('nl').classList.toggle('open')">
@@ -331,24 +339,25 @@ footer{background:var(--nd);border-top:1px solid rgba(255,255,255,.05);padding:2
 <section class="hero" id="home">
   <div class="hero-bg">COSTUME</div>
   <div class="hero-inner">
-    <div class="hero-eye"><span class="edot"></span>Premium Costume Rentals Since 2015<span class="edot"></span></div>
-    <h1>Dress Up.<br><em>Stand Out.</em><br>Be Legendary.</h1>
+    <div class="hero-eye"><span class="edot"></span>Premium Costume Rentals Since 2020<span class="edot"></span></div>
+    <h1>Every Costume.<br><em>Every Occasion.</em><br>One Place.</h1>
     <div class="hero-rule"></div>
-    <p>Hundreds of premium costumes for every occasion — school plays, events, festivals, and beyond.</p>
+    <p>From your child's first fancy dress to school annual days, rent from Mythological, Bharatanatyam, Folk, Western, Patriotic, and 15+ more categories. </p>
+    <p>Complete sets with jewellery and accessories at affordable prices, trusted by 50+ schools, delivered clean across Karnataka, based in Dharwad.</p>
     <div class="hero-contacts">
-      <a href="https://g.page/YOUR-PROFILE" target="_blank" class="hc-btn">
+      <a href="https://maps.app.goo.gl/D4yZvXam25wXXRjd6" target="_blank" class="hc-btn">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
         Google Maps
       </a>
       <div class="hc-div"></div>
-      <a href="https://instagram.com/YOUR_HANDLE" target="_blank" class="hc-btn">
+      <a href="https://www.instagram.com/harihar_costumes/" target="_blank" class="hc-btn">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
         Instagram
       </a>
       <div class="hc-div"></div>
-      <a href="tel:+910000000000" class="hc-btn">
+      <a href="tel:+919449897442" class="hc-btn">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.05 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-        +91 00000 00000
+        +91 94498 97442
       </a>
     </div>
     <div class="hero-btns">
@@ -362,13 +371,24 @@ footer{background:var(--nd);border-top:1px solid rgba(255,255,255,.05);padding:2
 <!-- STATS -->
 <div class="stats">
   <div class="stats-inner">
-    <div class="stat-item"><span class="stat-icon">🎭</span><span class="stat-num" data-count="500">0</span><div class="stat-lbl">Costumes Available</div></div>
-    <div class="stat-item"><span class="stat-icon">😄</span><span class="stat-num" data-count="1200">0</span><div class="stat-lbl">Happy Customers</div></div>
-    <div class="stat-item"><span class="stat-icon">🏆</span><span class="stat-num" data-count="10">0</span><div class="stat-lbl">Years of Service</div></div>
-    <div class="stat-item"><span class="stat-icon">🏫</span><span class="stat-num" data-count="80">0</span><div class="stat-lbl">Schools Served</div></div>
-    <div class="stat-item"><span class="stat-icon">🗺️</span><span class="stat-num" data-count="12">0</span><div class="stat-lbl">Cities Reached</div></div>
+    <div class="stat-item"><span class="stat-icon">🎭</span><span class="stat-num" data-count="1200">0</span><div class="stat-lbl">Costumes Available</div></div>
+    <div class="stat-item"><span class="stat-icon">🏆</span><span class="stat-num" data-count="5">0</span><div class="stat-lbl">Years of Service</div></div>
+    <div class="stat-item"><span class="stat-icon">🏫</span><span class="stat-num" data-count="50">0</span><div class="stat-lbl">Schools Served</div></div>
+    <div class="stat-item"><span class="stat-icon">🗺️</span><span class="stat-num" data-count="22">0</span><div class="stat-lbl">Cities Reached</div></div>
   </div>
 </div>
+
+<!-- SEASONAL / WHAT'S NEW -->
+<section id="seasonal">
+  <div class="seasonal-ghost">Season</div>
+  <div style="position:relative;z-index:2">
+    <div class="seasonal-eye">What's New?</div>
+    <h2>The Season Special<br><em>Collection is Here</em></h2>
+    <div class="s-rule"></div>
+    <p>Your Favourite Season Deserves the Perfect Costume. Reserve yours before it is gone.</p>
+    <a class="btn-gold" onclick="navTo('catalog')">Explore the Collection</a>
+  </div>
+</section>
 
 <!-- CATALOG -->
 <section id="catalog">
@@ -388,25 +408,24 @@ footer{background:var(--nd);border-top:1px solid rgba(255,255,255,.05);padding:2
     </div>
     <!-- NO reveal class on grid — shows immediately -->
     <div class="cat-grid">
+      <a href="category.html?cat=mythological" class="cat-card c5"><div class="cat-bg">🔱</div><div class="cat-veil"></div><div class="cat-content"><div class="cat-name">Mythological</div><div class="cat-count">Gods, Kings, & Epics characters</div></div><div class="cat-arrow">→</div></a>
       <a href="category.html?cat=western" class="cat-card c1"><div class="cat-bg">💃</div><div class="cat-veil"></div><div class="cat-content"><div class="cat-name">Western Dress</div><div class="cat-count">Gowns &amp; More</div></div><div class="cat-arrow">→</div></a>
-      <a href="category.html?cat=trees" class="cat-card c2"><div class="cat-bg">🌸</div><div class="cat-veil"></div><div class="cat-content"><div class="cat-name">Trees &amp; Flowers</div><div class="cat-count">Nature Themes</div></div><div class="cat-arrow">→</div></a>
-      <a href="category.html?cat=retro" class="cat-card c3"><div class="cat-bg">🕺</div><div class="cat-veil"></div><div class="cat-content"><div class="cat-name">Retro</div><div class="cat-count">Vintage Styles</div></div><div class="cat-arrow">→</div></a>
-      <a href="category.html?cat=patriotic" class="cat-card c4"><div class="cat-bg">🇮🇳</div><div class="cat-veil"></div><div class="cat-content"><div class="cat-name">Patriotic &amp; Freedom Fighters</div><div class="cat-count">Independence Themes</div></div><div class="cat-arrow">→</div></a>
-      <a href="category.html?cat=mythological" class="cat-card c5"><div class="cat-bg">🔱</div><div class="cat-veil"></div><div class="cat-content"><div class="cat-name">Mythological</div><div class="cat-count">Gods &amp; Epics</div></div><div class="cat-arrow">→</div></a>
-      <a href="category.html?cat=lavani" class="cat-card c6"><div class="cat-bg">🥻</div><div class="cat-veil"></div><div class="cat-content"><div class="cat-name">Lavani &amp; Marathi Saree</div><div class="cat-count">Maharashtra Folk</div></div><div class="cat-arrow">→</div></a>
-      <a href="category.html?cat=ladies" class="cat-card c7"><div class="cat-bg">👗</div><div class="cat-veil"></div><div class="cat-content"><div class="cat-name">Ladies Costumes</div><div class="cat-count">Wide Variety</div></div><div class="cat-arrow">→</div></a>
-      <a href="category.html?cat=krishna" class="cat-card c8"><div class="cat-bg">🦚</div><div class="cat-veil"></div><div class="cat-content"><div class="cat-name">Krishna Janmashtami</div><div class="cat-count">Krishna &amp; Radha</div></div><div class="cat-arrow">→</div></a>
-      <a href="category.html?cat=kids" class="cat-card c9"><div class="cat-bg">👧</div><div class="cat-veil"></div><div class="cat-content"><div class="cat-name">Kids Costumes</div><div class="cat-count">All Themes</div></div><div class="cat-arrow">→</div></a>
-      <a href="category.html?cat=jackets" class="cat-card c10"><div class="cat-bg">🧥</div><div class="cat-veil"></div><div class="cat-content"><div class="cat-name">Jackets &amp; Chest Pieces</div><div class="cat-count">Bold Looks</div></div><div class="cat-arrow">→</div></a>
-      <a href="category.html?cat=group" class="cat-card c11"><div class="cat-bg">🎶</div><div class="cat-veil"></div><div class="cat-content"><div class="cat-name">Group Dances</div><div class="cat-count">Matching Sets</div></div><div class="cat-arrow">→</div></a>
-      <a href="category.html?cat=ghaghra" class="cat-card c12"><div class="cat-bg">🌀</div><div class="cat-veil"></div><div class="cat-content"><div class="cat-name">Ghaghra</div><div class="cat-count">Rajasthani &amp; Folk</div></div><div class="cat-arrow">→</div></a>
-      <a href="category.html?cat=fruits" class="cat-card c13"><div class="cat-bg">🍎</div><div class="cat-veil"></div><div class="cat-content"><div class="cat-name">Fruits &amp; Vegetables</div><div class="cat-count">Fun &amp; Quirky</div></div><div class="cat-arrow">→</div></a>
       <a href="category.html?cat=folk" class="cat-card c14"><div class="cat-bg">🎵</div><div class="cat-veil"></div><div class="cat-content"><div class="cat-name">Folk &amp; Classical Dance</div><div class="cat-count">Traditional Forms</div></div><div class="cat-arrow">→</div></a>
-      <a href="category.html?cat=countries" class="cat-card c15"><div class="cat-bg">🌍</div><div class="cat-veil"></div><div class="cat-content"><div class="cat-name">Countries &amp; States</div><div class="cat-count">World Cultures</div></div><div class="cat-arrow">→</div></a>
-      <a href="category.html?cat=cartoons" class="cat-card c16"><div class="cat-bg">🎠</div><div class="cat-veil"></div><div class="cat-content"><div class="cat-name">Cartoons &amp; Mascots</div><div class="cat-count">Fun Characters</div></div><div class="cat-arrow">→</div></a>
-      <a href="category.html?cat=blazers" class="cat-card c17"><div class="cat-bg">🎓</div><div class="cat-veil"></div><div class="cat-content"><div class="cat-name">Blazers &amp; Graduation</div><div class="cat-count">Gowns &amp; Formals</div></div><div class="cat-arrow">→</div></a>
       <a href="category.html?cat=bharatanatyam" class="cat-card c18"><div class="cat-bg">🙏</div><div class="cat-veil"></div><div class="cat-content"><div class="cat-name">Bharatanatyam</div><div class="cat-count">Classical Dance</div></div><div class="cat-arrow">→</div></a>
+      <a href="category.html?cat=patriotic" class="cat-card c4"><div class="cat-bg">🇮🇳</div><div class="cat-veil"></div><div class ="cat-content"><div class ="cat-name"> Patriotic &amp; Freedom Fighters </div> <div class="cat-count"> Independence Themes </div></div><div class="cat-arrow">→</div></a>
+      <a href="category.html?cat=lavani" class="cat-card c6"><div class="cat-bg">🥻</div><div class ="cat-veil"></div><div class ="cat-content"><div class ="cat-name"> Lavani &amp; Marathi Saree </div><div class ="cat-count"> Maharashtra Folk </div></div><div class ="cat-arrow">→</div></a >
+      <a href="category.html?cat=ghaghra" class="cat-card c12"><div class="cat-bg">🌀</div><div class="cat-veil"></div><div class="cat-content"><div class="cat-name">Ghaghra</div><div class="cat-count">Rajasthani &amp; Folk</div></div><div class="cat-arrow">→</div></a>
+      <a href="category.html?cat=countries" class="cat-card c15"><div class="cat-bg">🌍</div><div class="cat-veil"></div><div class="cat-content"><div class="cat-name">Countries & States</div><div class="cat-count">World Cultures</div></div><div class="cat-arrow">→</div></a>
+      <a href="category.html?cat=blazers" class="cat-card c17"><div class="cat-bg">🎓</div><div class="cat-veil"></div><div class="cat-content"><div class="cat-name">Blazers & Graduation Gowns</div><div class="cat-count">Gowns &amp; Formals</div></div><div class="cat-arrow">→</div></a>
+      <a href="category.html?cat=fruits" class="cat-card c13"><div class="cat-bg">🍎</div><div class="cat-veil"></div><div class="cat-content"><div class="cat-name">Trees, Fruits &amp; Vegetables</div><div class="cat-count">Fun &amp; Quirky</div></div><div class="cat-arrow">→</div></a>
       <a href="category.html?cat=animals" class="cat-card c19"><div class="cat-bg">🦁</div><div class="cat-veil"></div><div class="cat-content"><div class="cat-name">Animals &amp; Birds</div><div class="cat-count">Kids &amp; Adults</div></div><div class="cat-arrow">→</div></a>
+      <a href="category.html?cat=cartoons" class="cat-card c16"><div class="cat-bg">🎠</div><div class="cat-veil"></div><div class="cat-content"><div class="cat-name">Cartoons &amp; Mascots</div><div class="cat-count">Fun Characters</div></div><div class="cat-arrow">→</div></a>
+      <a href="category.html?cat=krishna" class="cat-card c8"><div class="cat-bg">🦚</div><div class="cat-veil"></div><div class="cat-content"><div class="cat-name">Krishna Janmashtami</div><div class="cat-count">Krishna &amp; Radha</div></div><div class="cat-arrow">→</div></a>
+      <a href="category.html?cat=ladies" class="cat-card c7"><div class="cat-bg">👗</div><div class="cat-veil"></div><div class="cat-content"><div class="cat-name">Ladies Costumes</div><div class="cat-count">Wide Variety</div></div><div class="cat-arrow">→</div></a>
+      <a href="category.html?cat=jackets" class="cat-card c10"><div class="cat-bg">🧥</div><div class="cat-veil"></div><div class="cat-content"><div class="cat-name">Jackets &amp; Chest Pieces</div><div class="cat-count">Bold Looks</div></div><div class="cat-arrow">→</div></a>
+      <a href="category.html?cat=retro" class="cat-card c3"><div class="cat-bg">🕺</div><div class="cat-veil"></div><div class="cat-content"><div class="cat-name">Retro</div><div class="cat-count">Vintage Styles</div></div><div class="cat-arrow">→</div></a>
+      <a href="category.html?cat=kids" class="cat-card c9"><div class="cat-bg">👧</div><div class="cat-veil"></div><div class="cat-content"><div class="cat-name">Kids Costumes</div><div class="cat-count">All Themes</div></div><div class="cat-arrow">→</div></a>
+      <a href="category.html?cat=group" class="cat-card c11"><div class="cat-bg">🎶</ div>< div class =" cat-veil " ></ div >< divclass =" cat-content " >< divclass =" cat-name " > Group Dances </ div >< divclass =" cat-count " > Matching Sets </ div ></ div >< divclass =" cat-arrow " > → </ div ></ a >
       <a href="category.html?cat=accessories" class="cat-card c20"><div class="cat-bg">💍</div><div class="cat-veil"></div><div class="cat-content"><div class="cat-name">Accessories</div><div class="cat-count">Jewellery &amp; Props</div></div><div class="cat-arrow">→</div></a>
     </div>
   </div>
@@ -423,7 +442,7 @@ footer{background:var(--nd);border-top:1px solid rgba(255,255,255,.05);padding:2
     </div>
     <div class="steps reveal" style="transition-delay:.1s">
       <div class="step"><div class="step-bar"></div><div class="step-num">01</div><span class="step-icon">🔍</span><h3>Browse &amp; Choose</h3><p>Explore our catalog by category or occasion.</p></div>
-      <div class="step"><div class="step-bar"></div><div class="step-num">02</div><span class="step-icon">📋</span><h3>Reserve Your Date</h3><p>Contact us by phone or WhatsApp. We confirm and hold it for you.</p></div>
+      <div class="step"><div class="step-bar"></div><div class="step-num">02</div><span class="step-icon">📋</span><h3>Reserve Your Date</h3><p>Contact us by phone, WhatsApp, or visiting our store. We confirm and book it for you.</p></div>
       <div class="step"><div class="step-bar"></div><div class="step-num">03</div><span class="step-icon">🛍️</span><h3>Pick Up or Delivery</h3><p>Collect from our shop or we deliver to you.</p></div>
       <div class="step"><div class="step-bar"></div><div class="step-num">04</div><span class="step-icon">🔄</span><h3>Return with Ease</h3><p>Return within the rental period. We handle all the cleaning.</p></div>
     </div>
@@ -434,37 +453,19 @@ footer{background:var(--nd);border-top:1px solid rgba(255,255,255,.05);padding:2
 <section id="features">
   <div class="container">
     <div class="sec-hdr reveal">
-      <div class="sec-eye" style="color:var(--rl)">Why Choose Us</div>
+      <div class="sec-eye" style="color:var(--rl)">Why Choose Us?</div>
       <h2 class="sec-title sec-title-lt">Everything You <em>Need</em></h2>
       <div class="grule" style="margin:1.3rem auto 0"></div>
       <p class="sec-sub" style="color:rgba(255,255,255,.4);margin:.8rem auto 0">We have thought of everything so you do not have to.</p>
     </div>
     <div class="feat-grid reveal" style="transition-delay:.1s">
-      <div class="feat-item"><span class="feat-icon">🚗</span><div class="feat-title">Pick Up &amp; Drop</div><div class="feat-desc">Convenient pick up and drop so you never worry about transport.</div></div>
-      <div class="feat-item"><span class="feat-icon">✨</span><div class="feat-title">Hygiene First</div><div class="feat-desc">Every costume is cleaned, sanitised, and pressed before it reaches you.</div></div>
-      <div class="feat-item"><span class="feat-icon">📏</span><div class="feat-title">No Size Issues</div><div class="feat-desc">All sizes available. We adjust for a perfect fit every time.</div></div>
-      <div class="feat-item"><span class="feat-icon">📦</span><div class="feat-title">Bulk Orders Welcome</div><div class="feat-desc">Schools and theaters — large group orders handled with ease.</div></div>
-      <div class="feat-item"><span class="feat-icon">🎭</span><div class="feat-title">Huge Variety</div><div class="feat-desc">20+ categories covering every theme, culture, and character.</div></div>
-      <div class="feat-item"><span class="feat-icon">🏷️</span><div class="feat-title">Packed &amp; Labelled</div><div class="feat-desc">Every costume packed neatly and labelled — perfect for bulk orders.</div></div>
-      <div class="feat-item"><span class="feat-icon">💰</span><div class="feat-title">Reasonable Cost</div><div class="feat-desc">Premium quality at fair prices.</div></div>
-      <div class="feat-item"><span class="feat-icon">💍</span><div class="feat-title">Jewellery &amp; Accessories</div><div class="feat-desc">Complete sets with matching jewellery and props included.</div></div>
-      <div class="feat-item"><span class="feat-icon">🎯</span><div class="feat-title">Complete Character Sets</div><div class="feat-desc">Full head-to-toe sets. No guessing, no missing pieces.</div></div>
-      <div class="feat-item"><span class="feat-icon">✂️</span><div class="feat-title">Customisation Possible</div><div class="feat-desc">Need something specific? We customise to match your requirement.</div></div>
-      <div class="feat-item"><span class="feat-icon">🛡️</span><div class="feat-title">Well Maintained</div><div class="feat-desc">Every piece inspected and maintained to always look stage-ready.</div></div>
-      <div class="feat-item"><span class="feat-icon">⏰</span><div class="feat-title">Flexible &amp; Punctual</div><div class="feat-desc">Always deliver on time, especially for school events.</div></div>
+      <div class="feat-item"><span class="feat-icon">✨</span><div class="feat-title">Clean, Packed & Ready</div><div class="feat-desc">Every costume is washed, labelled, and neatly packed before it reaches you. Clean, organised, and ready to wear straight out of the bag.</div></div>
+      <div class="feat-item"><span class="feat-icon">🎭</span><div class="feat-title">Complete Sets, Every Time</div><div class="feat-desc">Every rental includes the full outfit, matching jewellery, props, and accessories. Everything arrives together, no hunting for missing pieces.</div></div>
+      <div class="feat-item"><span class="feat-icon">🚗</span><div class="feat-title">Pick Up & Drop</div><div class="feat-desc">We come to you. Our pick up and drop service means you never have to worry about transport, especially for bulk school orders.</div></div>
+      <div class="feat-item"><span class="feat-icon">📦</span><div class="feat-title">Bulk Orders, Zero Hassle</div><div class="feat-desc">Bulk quantities available for school gatherings, and group events. Handed over well in advance, so teachers stay stress free on event day.</div></div>
+      <div class="feat-item"><span class="feat-icon">✂️</span><div class="feat-title">Customisation Available</div><div class="feat-desc">Cannot find what you need? We customise costumes to match your exact requirement, whether it is a school theme, special event, or a one-of-a-kind look.</div></div>
+      <div class="feat-item"><span class="feat-icon">💰</span><div class="feat-title">Affordable Rentals, No Compromise</div><div class="feat-desc">Premium quality at honest rental prices. Well maintained, stage-ready, and available in all sizes with adjustments for the perfect fit.</div></div>
     </div>
-  </div>
-</section>
-
-<!-- SEASONAL / WHAT'S NEW -->
-<section id="seasonal">
-  <div class="seasonal-ghost">Season</div>
-  <div style="position:relative;z-index:2">
-    <div class="seasonal-eye">What's New</div>
-    <h2>The Season Special<br><em>Collection is Here</em></h2>
-    <div class="s-rule"></div>
-    <p>Limited pieces. Premium quality. Reserve yours before it is gone.</p>
-    <a class="btn-gold" onclick="navTo('catalog')">Explore the Collection</a>
   </div>
 </section>
 
@@ -530,17 +531,17 @@ footer{background:var(--nd);border-top:1px solid rgba(255,255,255,.05);padding:2
       <div class="owner-details">
         <div>
           <div class="owner-label">Your Host</div>
-          <div class="owner-name">Owner <em>Name</em></div>
-          <div class="owner-tagline">CostumeWorld — Est. 2015</div>
+          <div class="owner-name">Mrs. Kusuma M. Harihar </div>
+          <div class="owner-tagline">Harihar's Costumes</div>
           <div class="owner-divider"></div>
         </div>
         <div class="contact-list">
-          <div class="contact-row"><div class="cr-icon">📍</div><div><div class="cr-label">Address</div><div class="cr-val">Your Shop Address, Area,<br>City, State – PIN</div></div></div>
-          <div class="contact-row"><div class="cr-icon">🔍</div><div><div class="cr-label">Google Profile</div><div class="cr-val"><a href="https://g.page/YOUR-PROFILE" target="_blank">View on Google Maps →</a></div></div></div>
-          <div class="contact-row"><div class="cr-icon">📸</div><div><div class="cr-label">Instagram</div><div class="cr-val"><a href="https://instagram.com/YOUR_HANDLE" target="_blank">@your_handle</a></div></div></div>
-          <div class="contact-row"><div class="cr-icon">✉️</div><div><div class="cr-label">Email</div><div class="cr-val"><a href="mailto:your@email.com">your@email.com</a></div></div></div>
-          <div class="contact-row"><div class="cr-icon">📞</div><div><div class="cr-label">Phone &amp; WhatsApp</div><div class="cr-val"><a href="tel:+910000000000">+91 00000 00000</a></div></div></div>
-          <div class="contact-row"><div class="cr-icon">🕐</div><div><div class="cr-label">Shop Timings</div><div class="timing-grid"><div class="timing-item"><span>Mon – Sat</span>10:00 AM – 8:00 PM</div><div class="timing-item"><span>Sunday</span>11:00 AM – 6:00 PM</div></div></div></div>
+          <div class="contact-row"><div class="cr-icon">📍</div><div><div class="cr-label">Address</div><div class="cr-val">#Shivling, Anchatgeri chawl, Malapur road, Maratha Colony,<br>Dharwad, Karnataka – 580008</div></div></div>
+          <div class="contact-row"><div class="cr-icon">🔍</div><div><div class="cr-label">Google Profile</div><div class="cr-val"><a href="https://www.google.com/search?q=harihar%27s+costumes+dharwad&sca_esv=561082500&sxsrf=AB5stBhR9EI0DjdtTaOGCg2gp9XNTXfHUQ%3A1693339317702&ei=tU7uZNHEKp_useMPxruqkAc" target="_blank">View on Google Maps →</a></div></div></div>
+          <div class="contact-row"><div class="cr-icon">📸</div><div><div class="cr-label">Instagram</div><div class="cr-val"><a href="https://instagram.com/harihar_costumes" target="_blank">@harihar_costumes</a></div></div></div>
+          <div class="contact-row"><div class="cr-icon">✉️</div><div><div class="cr-label">Email</div><div class="cr-val"><a href="mailto:harihar.costumes@email.com">harihar.costumes@email.com</a></div></div></div>
+          <div class="contact-row"><div class="cr-icon">📞</div><div><div class="cr-label">Phone &amp; WhatsApp</div><div class="cr-val"><a href="tel:+919449897442">+91 94498 97442</a></div></div></div>
+          <div class="contact-row"><div class="cr-icon">🕐</div><div><div class="cr-label">Shop Timings</div><div class="timing-grid"><div class="timing-item"><span>Everyday</span>11:00 AM - 8:00 PM</div></div></div></div>
         </div>
       </div>
     </div>
@@ -553,27 +554,27 @@ footer{background:var(--nd);border-top:1px solid rgba(255,255,255,.05);padding:2
     <div>
       <a href="#" class="footer-logo" onclick="window.scrollTo({top:0,behavior:'smooth'});return false">
         <img src="logo.png" alt="CostumeWorld Logo"/>
-        <div class="footer-logo-text">Costume<span>World</span></div>
+        <div class="footer-logo-text">Harihar's <span>Costumes</span></div>
       </a>
-      <span class="footer-tagline">Dress Up. Stand Out. Be Remembered.</span>
+      <span class="footer-tagline">Every Costume. Every Ocassion. One Place.</span>
     </div>
     <div class="footer-links">
+      <a onclick="navTo('seasonal')">What's New?</a>
       <a onclick="navTo('catalog')">Catalog</a>
+      <a onclick="navTo('features')">Why Us?</a>
       <a onclick="navTo('customers')">Customers</a>
-      <a onclick="navTo('seasonal')">What's New</a>
-      <a onclick="navTo('features')">About Us</a>
       <a onclick="navTo('contact')">Contact</a>
     </div>
     <div class="footer-socials">
-      <a href="https://instagram.com/YOUR_HANDLE" target="_blank" class="fs-link">Ig</a>
-      <a href="https://g.page/YOUR-PROFILE" target="_blank" class="fs-link">G</a>
-      <a href="https://wa.me/910000000000" target="_blank" class="fs-link">Wa</a>
+      <a href="https://instagram.com/harihar_costumes" target="_blank" class="fs-link">📸</a>
+      <a href="https://maps.app.goo.gl/eJY2dhZrET7pCwEw5" target="_blank" class="fs-link">📍</a>
+      <a href="https://wa.me/919449897442" target="_blank" class="fs-link">💬</a>
     </div>
   </div>
-  <div class="footer-copy">© 2025 CostumeWorld. All rights reserved.</div>
+
 </footer>
 
-<a href="https://wa.me/910000000000" class="wa" target="_blank"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+<a href="https://wa.me/919449897442" class="wa" target="_blank"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
 <a href="#" class="btt" id="btt">↑</a>
 
 <script>
